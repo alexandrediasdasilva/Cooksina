@@ -11,8 +11,7 @@ import SwiftUI
 struct CooksinaApp: App {
     var body: some Scene {
         WindowGroup {
-//            MainView()
-            RecettesView()
+            MainView()
         }
     }
 }
