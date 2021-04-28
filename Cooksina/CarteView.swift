@@ -66,27 +66,54 @@ struct CarteView: View {
     var body: some View {
         NavigationView {
             VStack {
-                MapView(coordinate: CLLocationCoordinate2D(latitude: 50, longitude: 15))
-                 
-                            
-                            
-                            //            Text(listRegions())
-                            
-                        } .navigationTitle("Carte")
-            }
+                Text("Choisissez la région dont vous souhaitez voir les recettes")
+                    .foregroundColor(Color.gray)
+                Spacer()
+                ZStack {
+                    
+                    MapView(coordinate: CLLocationCoordinate2D(latitude: 50, longitude: 15))
+                    VStack {
+                        Spacer()
+                        HStack(spacing: 32.0) {
+                            Button(action: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/{}/*@END_MENU_TOKEN@*/) {
+                                Image(systemName: "shuffle")
+                                    .foregroundColor(.white)
+                                    .padding()
+                                    .background(Color.blue)
+                                    .cornerRadius(99)
+                            }
+                            Button(action: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/{}/*@END_MENU_TOKEN@*/) {
+                                Image(systemName: "plus")
+                                    .foregroundColor(.white)
+                                    .padding()
+                                    .background(Color.blue)
+                                    .cornerRadius(99)
+                            }
+                        }
+                        .font(.title)
+                    } .padding()
+                    
+                }
+                
+                
+                
+                //            Text(listRegions())
+                
+            } .navigationTitle("Carte")
         }
     }
-    
-    //func listRegions() -> String {
-    //    for region in Region.allCases {
-    //        return region.rawValue
-    //    }
-    //
-    //    Region.allCases.forEach { print($0) }
-    //}
-    
-    struct MapView_Previews: PreviewProvider {
-        static var previews: some View {
-            MapView(coordinate: CLLocationCoordinate2D(latitude: 50, longitude: 15))
-        }
+}
+
+//func listRegions() -> String {
+//    for region in Region.allCases {
+//        return region.rawValue
+//    }
+//
+//    Region.allCases.forEach { print($0) }
+//}
+
+struct MapView_Previews: PreviewProvider {
+    static var previews: some View {
+        MapView(coordinate: CLLocationCoordinate2D(latitude: 50, longitude: 15))
     }
+}
