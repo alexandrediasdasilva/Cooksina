@@ -13,7 +13,7 @@ struct MainView: View {
         
         TabView {
 
-            MapView()
+            CarteView()
                 .tabItem {
                     Image(systemName: "globe")
                     Text("Carte")
