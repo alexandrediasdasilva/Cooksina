@@ -99,11 +99,52 @@ import SwiftUI
 // Possibilité 2 : Afficher une liste simple des régions
 
 struct RegionsView: View {
+    
+    @State var texteRecherche = ""
+    @State var isSearching = false
+    
     var body: some View {
         NavigationView {
-            List(Region.allCases, id: \.self) { region in
-                Text(region.rawValue)
-            } .navigationTitle("Régions")
+            
+            VStack {
+                HStack {
+                    TextField("Rechercher", text: $texteRecherche)
+                        .padding(.leading, 24)
+                }
+                .padding()
+                .background(Color(.systemGray5))
+                .cornerRadius(6)
+                .padding(.horizontal)
+                .onTapGesture {
+                    isSearching = true
+                }
+                .overlay(
+                    HStack {
+                        Image(systemName: "magnifyingglass")
+                        Spacer()
+                        
+                        if isSearching {
+                            Button(action: { texteRecherche = "" }, label: {
+                                Image(systemName: "xmark.circle.fill")
+                                    .padding(.vertical)
+                            })
+                        }
+                        
+                    } .padding(.horizontal, 32)
+                    .foregroundColor(.gray)
+                )
+                
+                
+                List(Region.allCases.filter({ "\($0)".contains(texteRecherche) || texteRecherche.isEmpty }), id: \.self) { region in
+                    
+                    NavigationLink(destination: Text(region.rawValue)) {
+                        Text(region.rawValue)
+                    }
+                    
+                } .navigationTitle("Régions")
+            }
+            
+
         }
     }
 }

@@ -21,7 +21,6 @@ struct RecetteListRow: View {
     let myRecette: Recette
     
     var body: some View {
-        //        ScrollView {
         HStack {
             Image(myRecette.image)
                 .resizable()
@@ -34,7 +33,6 @@ struct RecetteListRow: View {
                 Text(myRecette.description)
             }
         }
-        //        }
     }
 }
 
@@ -45,31 +43,50 @@ struct FiltresView: View {
     
     var body: some View {
         NavigationView {
-            Form {
-                Picker(selection: $regionIndex, label: Text("Région")) {
-                    Text("Région 1")
-                    Text("Région 2")
-                    Text("Région 3")
-                    Text("Région 4")
+            VStack {
+                Form {
+                    Picker(selection: $regionIndex, label: Text("Région")) {
+                        Text("Région 1")
+                        Text("Région 2")
+                        Text("Région 3")
+                        Text("Région 4")
+                    }
+                    
+                    Section(header: Text("Catégories")) {
+                        
+                        Toggle(isOn: $isSelected) {
+                            Text("Végétarien")
+                        }
+                        
+                        
+                        Toggle(isOn: $isSelected) {
+                            Text("Halal")
+                        }
+                        
+                        Toggle(isOn: $isSelected) {
+                            Text("Fêtes")
+                        }
+                        
+                    }
+                    
+                } .navigationTitle("Filtres")
+                HStack {
+                    Button(action: {}) {
+                        Text("Tout effacer")
+                            .padding()
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 2)
+                                    .stroke(lineWidth: 2.0)
+                            )
+                    }
+                    Button(action: {}) {
+                        Text("Terminer")
+                    } .padding()
+                    .background(Color.blue)
+                    .foregroundColor(.white)
+                    .cornerRadius(2)
                 }
-                
-                Section(header: Text("Catégories")) {
-                    
-                    Toggle(isOn: $isSelected) {
-                        Text("Végétarien")
-                    }
-                    
-                    
-                    Toggle(isOn: $isSelected) {
-                        Text("Halal")
-                    }
-                    
-                    Toggle(isOn: $isSelected) {
-                        Text("Fêtes")
-                    }
-                    
-                }
-            } .navigationTitle("Filtres")
+            }
         }
     }
 }
