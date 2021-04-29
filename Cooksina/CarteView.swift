@@ -107,33 +107,8 @@ struct RegionsView: View {
         NavigationView {
             
             VStack {
-                HStack {
-                    TextField("Rechercher", text: $texteRecherche)
-                        .padding(.leading, 24)
-                }
-                .padding()
-                .background(Color(.systemGray5))
-                .cornerRadius(6)
-                .padding(.horizontal)
-                .onTapGesture {
-                    isSearching = true
-                }
-                .overlay(
-                    HStack {
-                        Image(systemName: "magnifyingglass")
-                        Spacer()
-                        
-                        if isSearching {
-                            Button(action: { texteRecherche = "" }, label: {
-                                Image(systemName: "xmark.circle.fill")
-                                    .padding(.vertical)
-                            })
-                        }
-                        
-                    } .padding(.horizontal, 32)
-                    .foregroundColor(.gray)
-                )
                 
+                BarreDeRecherche(texteRecherche: $texteRecherche, isSearching: $isSearching)
                 
                 List(Region.allCases.filter({ "\($0)".contains(texteRecherche) || texteRecherche.isEmpty }), id: \.self) { region in
                     
@@ -144,7 +119,62 @@ struct RegionsView: View {
                 } .navigationTitle("Régions")
             }
             
+            
+        }
+    }
+}
 
+struct BarreDeRecherche: View {
+    
+    @Binding var texteRecherche: String
+    @Binding var isSearching: Bool
+    
+    var body: some View {
+        HStack {
+            HStack {
+                TextField("Rechercher", text: $texteRecherche)
+                    .padding(.leading, 24)
+            }
+            .padding()
+            .background(Color(.systemGray5))
+            .cornerRadius(6)
+            .padding(.horizontal)
+            .onTapGesture {
+                isSearching = true
+            }
+            .overlay(
+                HStack {
+                    Image(systemName: "magnifyingglass")
+                    Spacer()
+                    
+                    if isSearching {
+                        Button(action: { texteRecherche = "" }, label: {
+                            Image(systemName: "xmark.circle.fill")
+                                .padding(.vertical)
+                        })
+                    }
+                    
+                } .padding(.horizontal, 32)
+                .foregroundColor(.gray)
+            )                    .transition(.move(edge: .trailing))
+            .animation(.spring())
+            
+            if isSearching {
+                
+                Button(action: {
+                    isSearching = false
+                    texteRecherche = ""
+                    
+                    UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+                    
+                }, label: {
+                    Text("Cancel")
+                        .padding(.trailing)
+                        .padding(.leading, 0)
+                })
+                .transition(.move(edge: .trailing))
+                .animation(.spring())
+            }
         }
     }
 }
