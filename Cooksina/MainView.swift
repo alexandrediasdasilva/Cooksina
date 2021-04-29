@@ -13,7 +13,8 @@ struct MainView: View {
         
         TabView {
 
-            CarteView()
+//            CarteView()
+            RegionsView()
                 .tabItem {
                     Image(systemName: "globe")
                     Text("Carte")
@@ -31,9 +32,7 @@ struct MainView: View {
                     Text("Profil")
                 }
         }
-        
     }
-    
 }
 
 

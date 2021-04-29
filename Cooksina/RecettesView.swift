@@ -21,6 +21,7 @@ struct RecetteListRow: View {
     let myRecette: Recette
     
     var body: some View {
+        //        ScrollView {
         HStack {
             Image(myRecette.image)
                 .resizable()
@@ -33,6 +34,43 @@ struct RecetteListRow: View {
                 Text(myRecette.description)
             }
         }
+        //        }
+    }
+}
+
+struct FiltresView: View {
+    
+    @State private var regionIndex = 0
+    @State var isSelected = false
+    
+    var body: some View {
+        NavigationView {
+            Form {
+                Picker(selection: $regionIndex, label: Text("Région")) {
+                    Text("Région 1")
+                    Text("Région 2")
+                    Text("Région 3")
+                    Text("Région 4")
+                }
+                
+                Section(header: Text("Catégories")) {
+                    
+                    Toggle(isOn: $isSelected) {
+                        Text("Végétarien")
+                    }
+                    
+                    
+                    Toggle(isOn: $isSelected) {
+                        Text("Halal")
+                    }
+                    
+                    Toggle(isOn: $isSelected) {
+                        Text("Fêtes")
+                    }
+                    
+                }
+            } .navigationTitle("Filtres")
+        }
     }
 }
 
@@ -40,5 +78,11 @@ struct RecetteListRow: View {
 struct RecettesView_Previews: PreviewProvider {
     static var previews: some View {
         RecettesView()
+    }
+}
+
+struct Filtres_Previews: PreviewProvider {
+    static var previews: some View {
+        FiltresView()
     }
 }
