@@ -20,7 +20,7 @@ struct RegionsView: View {
             }
             .navigationTitle("Découvrir")
             .navigationBarItems(leading:
-                                    Button(action: {}) {
+                                    Button(action: {RecetteDetails(recetteChoisie: recettes.randomElement()!)}) {
                                         Text("Surprenez-moi")
                                             .fontWeight(.regular)
                                     }
@@ -39,6 +39,16 @@ struct RegionsView: View {
     struct Grid: View {
         var body: some View {
             ScrollView {
+                
+                // Voir si je dois passer regionChoisie en optionnel pour ne pas être obligé de le renseigner dans le cas où l'utilisateur veut voir toutes les recettes sans filtrage
+                
+//                NavigationLink(destination:
+                                                      
+//                    RecettesView(regionChoisie: "", texteRecherche: ""))
+//                    {
+//                    Text("Toutes les recettes")
+//                }
+                
                 LazyVGrid(columns: [
                     GridItem(.flexible(minimum: 50, maximum: 200), spacing: 16, alignment: .top),
                     GridItem(.flexible(minimum: 50, maximum: 200), spacing: 16, alignment: .top),
@@ -54,6 +64,7 @@ struct RegionsView: View {
                                     .resizable()
                                     .scaledToFit()
                                     .cornerRadius(10)
+                                    .shadow(radius: 5)
                                 
                                 Text(region.rawValue)
                                     .fontWeight(.semibold)
@@ -190,3 +201,6 @@ struct RegionsView: View {
 //        MapView(coordinate: CLLocationCoordinate2D(latitude: 50, longitude: 15))
 //    }
 //}
+
+
+

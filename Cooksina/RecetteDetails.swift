@@ -26,9 +26,9 @@ struct RecetteDetails: View {
     }
 }
 
-//struct RecetteDetails_Previews: PreviewProvider {
-//
-//    static var previews: some View {
-//        RecetteDetails(recetteChoisie: recetteTest)
-//    }
-//}
+struct RecetteDetails_Previews: PreviewProvider {
+
+    static var previews: some View {
+        RecetteDetails(recetteChoisie: recettes[1])
+    }
+}
