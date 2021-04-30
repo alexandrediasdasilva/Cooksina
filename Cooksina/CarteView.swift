@@ -8,8 +8,14 @@
 import SwiftUI
 
 struct RegionsView: View {
-    
+
+    func RandomRecette() -> Recette {
+        let randomRecette = recettes.randomElement()!
+        return randomRecette
+    }
+  
     var body: some View {
+        
         NavigationView {
             
             VStack {
@@ -19,14 +25,30 @@ struct RegionsView: View {
                 
             }
             .navigationTitle("Découvrir")
-            .navigationBarItems(leading:
-                                    Button(action: {}) {
-                                        Text("Surprenez-moi")
-                                            .fontWeight(.regular)
+            .navigationBarItems(
+//                leading:
+                                    
+//                                    NavigationLink(destination: RecetteDetails(recetteChoisie: randomRecette)
+//                                    ) {
+//                                        Button(action: {RandomRecette()}) {
+//                                            Text("Surprenez-moi")
+//                                            .fontWeight(.regular)
+//                                        }
+//                                    }
+                                    
+                                    
+//                                    Button(action: {}) {
+//                                        Text("Surprenez-moi")
+//                                            .fontWeight(.regular)
+//                                    }
+//                                ,
+                trailing:
+                                    NavigationLink(destination: RecetteEdit()) {
+                                        Image(systemName: "plus")
                                     }
-                                , trailing:
-                                    Button(action: {}) {Image(systemName: "plus")
-                                    }
+                                    
+//                                    Button(action: {}) {Image(systemName: "plus")
+//                                    }
             )
             
             

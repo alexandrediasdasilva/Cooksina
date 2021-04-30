@@ -17,6 +17,7 @@
 		660AB4172639696100D851E8 /* ChatDiscussionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660AB4162639696100D851E8 /* ChatDiscussionView.swift */; };
 		660AB41E2639901D00D851E8 /* CarteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660AB41D2639901D00D851E8 /* CarteView.swift */; };
 		660AB4242639B53900D851E8 /* vars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660AB4232639B53900D851E8 /* vars.swift */; };
+		662C89E7263CAF8B00DF41F8 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662C89E6263CAF8B00DF41F8 /* ImagePicker.swift */; };
 		669AC33D263B49D700B8922B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 669AC33C263B49D700B8922B /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +34,7 @@
 		660AB4162639696100D851E8 /* ChatDiscussionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatDiscussionView.swift; sourceTree = "<group>"; };
 		660AB41D2639901D00D851E8 /* CarteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarteView.swift; sourceTree = "<group>"; };
 		660AB4232639B53900D851E8 /* vars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = vars.swift; sourceTree = "<group>"; };
+		662C89E6263CAF8B00DF41F8 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		669AC33C263B49D700B8922B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -70,6 +72,7 @@
 				660AB41D2639901D00D851E8 /* CarteView.swift */,
 				660AB40D263968D700D851E8 /* RecettesView.swift */,
 				660AB4102639692100D851E8 /* RecetteEdit.swift */,
+				662C89E6263CAF8B00DF41F8 /* ImagePicker.swift */,
 				660AB4132639693100D851E8 /* RecetteDetails.swift */,
 				660AB40A2639685F00D851E8 /* ProfilView.swift */,
 				660AB4072639685400D851E8 /* ChatView.swift */,
@@ -166,6 +169,7 @@
 				660AB40B2639685F00D851E8 /* ProfilView.swift in Sources */,
 				660AB3F726394F4B00D851E8 /* CooksinaApp.swift in Sources */,
 				660AB4112639692100D851E8 /* RecetteEdit.swift in Sources */,
+				662C89E7263CAF8B00DF41F8 /* ImagePicker.swift in Sources */,
 				660AB41E2639901D00D851E8 /* CarteView.swift in Sources */,
 				660AB40E263968D700D851E8 /* RecettesView.swift in Sources */,
 			);

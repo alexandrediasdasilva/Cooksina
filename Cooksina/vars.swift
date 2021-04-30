@@ -20,15 +20,17 @@ struct Recette: Identifiable {
     var nbPersonnes: Int
     var difficulte: Difficulte
     var temps: Int // en minutes
-    var ingredients = [String]()
+    var ingredients = [Ingredient]()
     var instructions: String
     var ustensiles: String
 }
 
 // On définit une struct ingrédient composée d'une quantité et d'un nom
-struct Ingredient {
+struct Ingredient: Identifiable {
+    var id = UUID()
     var nom: String
-    var quantite: Float // unité variable ?
+    var quantite: String // unité variable ?
+    var suppression: Bool
 }
 
 enum Region: String, CaseIterable {
