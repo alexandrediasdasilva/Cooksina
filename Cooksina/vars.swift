@@ -52,6 +52,39 @@ enum Region: String, CaseIterable {
     case oceanie = "Océanie"
 }
 
+// Déclarer une extension sur mon enum avec une ppté calculée qui génère le nom de l'image (switch sur self)
+
+extension Region {
+    
+    var nomImage: String {
+        
+        switch self {
+        case .europe:
+            return "pasta"
+        case .ameriqueDuNord:
+            return "burger"
+        case .ameriqueCentraleEtAntilles:
+            return "colombo"
+        case .ameriqueDuSud:
+            return "empanadas"
+        case .afrique:
+            return "ragout"
+        case .afriqueDuNord:
+            return "tajine"
+        case .afriqueCentrale:
+            return "poulet"
+        case .afriqueAustrale:
+            return "biltong"
+        case .afriqueDeLOuest:
+            return "poulet-sauce"
+        default:
+            return ""
+        }
+        
+    }
+    
+}
+
 enum Difficulte {
     case facile, moyen, difficile
 }

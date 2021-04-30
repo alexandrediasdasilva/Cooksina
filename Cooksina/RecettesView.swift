@@ -46,12 +46,12 @@ struct FiltresView: View {
         NavigationView {
             VStack {
                 Form {
-                    Picker(selection: $regionIndex, label: Text("Région")) {
-                        Text("Région 1")
-                        Text("Région 2")
-                        Text("Région 3")
-                        Text("Région 4")
-                    }
+//                    Picker(selection: $regionIndex, label: Text("Région")) {
+//                        Text("Région 1")
+//                        Text("Région 2")
+//                        Text("Région 3")
+//                        Text("Région 4")
+//                    }
                     
                     Section(header: Text("Catégories")) {
                         

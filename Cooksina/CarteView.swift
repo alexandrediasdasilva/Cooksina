@@ -136,10 +136,10 @@ struct Grid: View {
                     
                     NavigationLink(destination: Text(region.rawValue)) {
                         VStack(alignment: .leading, spacing: 4) {
-                            Image("macarons")
+                            Image(region.nomImage)
                                 .resizable()
                                 .scaledToFit()
-                                .cornerRadius(20)
+                                .cornerRadius(10)
                             
                             Text(region.rawValue)
                                 .fontWeight(.semibold)
