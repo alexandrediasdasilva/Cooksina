@@ -40,6 +40,7 @@ struct FiltresView: View {
     
     @State private var regionIndex = 0
     @State var isSelected = false
+    @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
         NavigationView {
@@ -71,14 +72,13 @@ struct FiltresView: View {
                     
                 } .navigationTitle("Filtres")
                 HStack {
-                    Button(action: {}) {
-                        Text("Tout effacer")
-                            .padding()
-                            .overlay(
-                                RoundedRectangle(cornerRadius: 2)
-                                    .stroke(lineWidth: 2.0)
-                            )
-                    }
+                    Button("Annuler") {
+                        presentationMode.wrappedValue.dismiss()
+                    } .padding()
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 2)
+                            .stroke(lineWidth: 2.0)
+                    )
                     Button(action: {}) {
                         Text("Terminer")
                     } .padding()

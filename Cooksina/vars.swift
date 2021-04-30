@@ -38,7 +38,7 @@ enum Region: String, CaseIterable {
     case ameriqueDuSud = "Amérique du Sud"
     case afrique = "Afrique"
     case afriqueDuNord = "Afrique du Nord"
-    case afriqueCentrale = "Afrique central"
+    case afriqueCentrale = "Afrique centrale"
     case afriqueAustrale = "Afrique australe"
     case afriqueDeLOuest = "Afrique de l'Ouest"
     case afriqueDeLEst = "Afrique de l'Est"
