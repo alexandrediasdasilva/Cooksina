@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		660AB3F726394F4B00D851E8 /* CooksinaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660AB3F626394F4B00D851E8 /* CooksinaApp.swift */; };
-		660AB3F926394F4B00D851E8 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660AB3F826394F4B00D851E8 /* MainView.swift */; };
 		660AB3FE26394F4C00D851E8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 660AB3FD26394F4C00D851E8 /* Preview Assets.xcassets */; };
 		660AB4082639685400D851E8 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660AB4072639685400D851E8 /* ChatView.swift */; };
 		660AB40B2639685F00D851E8 /* ProfilView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660AB40A2639685F00D851E8 /* ProfilView.swift */; };
@@ -24,7 +23,6 @@
 /* Begin PBXFileReference section */
 		660AB3F326394F4B00D851E8 /* Cooksina.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cooksina.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		660AB3F626394F4B00D851E8 /* CooksinaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CooksinaApp.swift; sourceTree = "<group>"; };
-		660AB3F826394F4B00D851E8 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		660AB3FD26394F4C00D851E8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		660AB3FF26394F4C00D851E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		660AB4072639685400D851E8 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
@@ -69,7 +67,6 @@
 			isa = PBXGroup;
 			children = (
 				660AB3F626394F4B00D851E8 /* CooksinaApp.swift */,
-				660AB3F826394F4B00D851E8 /* MainView.swift */,
 				660AB41D2639901D00D851E8 /* CarteView.swift */,
 				660AB40D263968D700D851E8 /* RecettesView.swift */,
 				660AB4102639692100D851E8 /* RecetteEdit.swift */,
@@ -162,7 +159,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				660AB3F926394F4B00D851E8 /* MainView.swift in Sources */,
 				660AB4142639693100D851E8 /* RecetteDetails.swift in Sources */,
 				660AB4172639696100D851E8 /* ChatDiscussionView.swift in Sources */,
 				660AB4242639B53900D851E8 /* vars.swift in Sources */,

@@ -11,7 +11,26 @@ import SwiftUI
 struct CooksinaApp: App {
     var body: some Scene {
         WindowGroup {
-            MainView()
+            TabView {
+
+                RegionsView()
+                    .tabItem {
+                        Image(systemName: "globe")
+                        Text("Découvrir")
+                    }
+
+                ChatView()
+                    .tabItem {
+                        Image(systemName: "message")
+                        Text("Chat")
+                    }
+
+                ProfilView()
+                    .tabItem {
+                        Image(systemName: "person.crop.circle")
+                        Text("Profil")
+                    }
+            }
         }
     }
 }

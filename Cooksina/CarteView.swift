@@ -20,7 +20,7 @@ struct RegionsView: View {
             }
             .navigationTitle("Découvrir")
             .navigationBarItems(leading:
-                                    Button(action: {RecetteDetails(recetteChoisie: recettes.randomElement()!)}) {
+                                    Button(action: {}) {
                                         Text("Surprenez-moi")
                                             .fontWeight(.regular)
                                     }
@@ -90,6 +90,7 @@ struct RegionsView: View {
     struct RegionsView_Previews: PreviewProvider {
         static var previews: some View {
             RegionsView()
+                
         }
     }
     
