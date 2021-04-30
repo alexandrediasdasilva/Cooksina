@@ -90,6 +90,7 @@ enum Difficulte {
 }
 
 var recettes = [
+    Recette(titre: "Recette européenne", description: "Test", image: "macarons", auteur: "Kikoo", categories: ["Fête"], region: .europe, nbPersonnes: 4, difficulte: .moyen, temps: 3, instructions: "Instructions", ustensiles: "Ustensiles"),
     Recette(
         titre: "Poulet curry aux oignons",
         description: "Spécialité indienne assaisonnée au paprika et au curry",
