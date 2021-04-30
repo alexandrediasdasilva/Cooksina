@@ -93,7 +93,7 @@ var recettes = [
     Recette(titre: "Recette européenne", description: "Test", image: "macarons", auteur: "Kikoo", categories: ["Fête"], region: .europe, nbPersonnes: 4, difficulte: .moyen, temps: 3, instructions: "Instructions", ustensiles: "Ustensiles"),
     Recette(
         titre: "Poulet curry aux oignons",
-        description: "Spécialité indienne assaisonnée au paprika et au curry",
+        description: "Délicieuse spécialité indienne, assaisonnée au paprika et au curry",
         image: "poulet-curry",
         auteur: "Jane Doe",
         categories: ["Repas"],
@@ -132,7 +132,7 @@ var recettes = [
     
     Recette(
         titre: "Ragoût au bœuf",
-        description: "Spécialité indienne assaisonnée au paprika et au curry",
+        description: "Remarquable spécialité indienne assaisonnée au paprika et au curry qui ravira vos papilles",
         image: "ragout-boeuf",
         auteur: "Jane Doe",
         categories: ["Repas"],

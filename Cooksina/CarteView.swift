@@ -7,8 +7,6 @@
 
 import SwiftUI
 
-// Possibilité 2 : Afficher une liste des régions
-
 struct RegionsView: View {
     
     var body: some View {
@@ -16,80 +14,88 @@ struct RegionsView: View {
             
             VStack {
                 
-//                ListeRegions()
                 Grid()
                     .padding(.top, 12)
                 
             }
             .navigationTitle("Découvrir")
+            .navigationBarItems(leading:
+                                    Button(action: {}) {
+                                        Text("Surprenez-moi")
+                                            .fontWeight(.regular)
+                                    }
+                                , trailing:
+                                    Button(action: {}) {Image(systemName: "plus")
+                                    }
+            )
+            
+            
         }
     }
 }
-
-// Fin possibilité 2
-
-// Composants/extractions de vue
-
-struct Grid: View {
-    var body: some View {
-        ScrollView {
-            LazyVGrid(columns: [
-                GridItem(.flexible(minimum: 50, maximum: 200), spacing: 16, alignment: .top),
-                GridItem(.flexible(minimum: 50, maximum: 200), spacing: 16, alignment: .top),
-                GridItem(.flexible(minimum: 50, maximum: 200), spacing: 16, alignment: .top)
-            ], alignment: .leading, spacing: 16, content: {
-                
-                ForEach(Region.allCases, id: \.self) { region in
+    
+    // Composants/extractions de vue
+    
+    struct Grid: View {
+        var body: some View {
+            ScrollView {
+                LazyVGrid(columns: [
+                    GridItem(.flexible(minimum: 50, maximum: 200), spacing: 16, alignment: .top),
+                    GridItem(.flexible(minimum: 50, maximum: 200), spacing: 16, alignment: .top),
+                    GridItem(.flexible(minimum: 50, maximum: 200), spacing: 16, alignment: .top)
+                ], alignment: .leading, spacing: 16, content: {
                     
-                    NavigationLink(destination: RecettesView(regionChoisie: region, texteRecherche: "")) {
+                    ForEach(Region.allCases, id: \.self) { region in
                         
-                        VStack(alignment: .leading, spacing: 4) {
-                            Image(region.nomImage)
-                                .resizable()
-                                .scaledToFit()
-                                .cornerRadius(10)
+                        NavigationLink(destination: RecettesView(regionChoisie: region, texteRecherche: "")) {
                             
-                            Text(region.rawValue)
-                                .fontWeight(.semibold)
-                                .foregroundColor(Color.black)
-                                .padding(.top, 4)
-                                .font(.caption2)
+                            VStack(alignment: .leading, spacing: 4) {
+                                Image(region.nomImage)
+                                    .resizable()
+                                    .scaledToFit()
+                                    .cornerRadius(10)
+                                
+                                Text(region.rawValue)
+                                    .fontWeight(.semibold)
+                                    .foregroundColor(Color.black)
+                                    .padding(.top, 4)
+                                    .font(.caption2)
+                                
+                                Spacer()
+                            }
                             
-                            Spacer()
                         }
-                        
                     }
-                }
-                
-            }) .padding(.horizontal, 12)
+                    
+                }) .padding(.horizontal, 12)
+            }
         }
     }
-}
-
-
-
-// Previews
-
-struct RegionsView_Previews: PreviewProvider {
-    static var previews: some View {
-        RegionsView()
-    }
-}
-
-struct ListeRegions: View {
     
-    @Binding var texteRecherche: String
     
-    var body: some View {
-        List(Region.allCases.filter({ "\($0)".localizedCaseInsensitiveContains(texteRecherche) || texteRecherche.isEmpty }), id: \.self) { region in
-            
-            NavigationLink(destination: Text(region.rawValue)) {
-                Text(region.rawValue)
-            }
-            
-        } .navigationTitle("Découvrir")
+    
+    // Previews
+    
+    struct RegionsView_Previews: PreviewProvider {
+        static var previews: some View {
+            RegionsView()
+        }
     }
-}
+    
+//    struct ListeRegions: View {
+//        
+//        @Binding var texteRecherche: String
+//        
+//        var body: some View {
+//            List(Region.allCases.filter({ "\($0)".localizedCaseInsensitiveContains(texteRecherche) || texteRecherche.isEmpty }), id: \.self) { region in
+//                
+//                NavigationLink(destination: Text(region.rawValue)) {
+//                    Text(region.rawValue)
+//                }
+//                
+//            } .navigationTitle("Découvrir")
+//        }
+//    }
 
 
 // Possibilité 1 : intégration une carte du monde avec annotations en utilisant MapKit

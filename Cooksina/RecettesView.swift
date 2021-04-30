@@ -19,13 +19,10 @@ struct RecettesView: View {
         
             VStack {
                 BarreDeRecherche(texteRecherche: $texteRecherche, isSearching: $isSearching, showingSheet: $showingSheet)
-                
-                
-                // Je veux ajouter une condition supplémentaire au filter ci-dessous pour que seules les recettes dont la region == regionChoisie soient affichées
-                
+                                
                 List(recettes.filter({ $0.region == regionChoisie && ($0.titre.localizedCaseInsensitiveContains(texteRecherche) || $0.description.localizedCaseInsensitiveContains(texteRecherche) || texteRecherche.isEmpty) })) { recette in
 
-                    NavigationLink(destination: Color.blue) {
+                    NavigationLink(destination: RecetteDetails(recetteChoisie: recette)) {
                         RecetteListRow(myRecette: recette)
                     }
 
@@ -39,16 +36,18 @@ struct RecetteListRow: View {
     let myRecette: Recette
     
     var body: some View {
-        HStack {
+        HStack(alignment: .top) {
             Image(myRecette.image)
                 .resizable()
                 .aspectRatio(contentMode: .fill)
-                .frame(width: 50, height: 50)
+                .frame(width: 80, height: 80)
+                .clipShape(Rectangle())
+//                .cornerRadius(10)
             VStack(alignment: .leading) {
                 Text(myRecette.titre)
-                    .font(.title2)
-                    .fontWeight(.bold)
                 Text(myRecette.description)
+                    .font(.subheadline)
+                    .foregroundColor(Color.gray)
             }
         }
     }
@@ -173,7 +172,7 @@ struct FiltresView: View {
 
 struct RecettesView_Previews: PreviewProvider {
     static var previews: some View {
-        RecettesView(regionChoisie: .afriqueDuNord, texteRecherche: "")
+        RecettesView(regionChoisie: .asieDuSud, texteRecherche: "")
     }
 }
 
