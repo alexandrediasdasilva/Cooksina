@@ -27,6 +27,11 @@ struct RegionsView: View {
                     Grid()
                         .padding(.top, 12)
                     
+                    NavigationLink(destination: ToutesLesRecettes()) {
+                        Text("Toutes les recettes")
+                            .frame(maxWidth: .infinity)
+                    } .padding()
+                    
                 }
                 .navigationTitle("Découvrir")
                 .navigationBarItems(
@@ -61,14 +66,6 @@ struct RegionsView: View {
 struct Grid: View {
     var body: some View {
         
-        // Voir si je dois passer regionChoisie en optionnel pour ne pas être obligé de le renseigner dans le cas où l'utilisateur veut voir toutes les recettes sans filtrage
-        
-        //                NavigationLink(destination:
-        
-        //                    RecettesView(regionChoisie: "", texteRecherche: ""))
-        //                    {
-        //                    Text("Toutes les recettes")
-        //                }
         VStack(alignment: .leading) {
             Text("Les régions 🗺️")
                 .font(.title)
@@ -140,12 +137,12 @@ struct SelectionRedac: View {
                                 Image(recette.image)
                                     .resizable()
                                     .aspectRatio(contentMode: .fill)
-                                    .frame(width: 150, height: 150)
+                                    .frame(width: 150, height: 250)
                                 
                                 ZStack {
                                     Rectangle()
                                         .fill(Color.black)
-                                        .frame(width: 150, height: 50)
+                                        .frame(width: 150, height: 80)
                                         .opacity(0.5)
                                     
                                     Text(recette.titre)
@@ -166,11 +163,37 @@ struct SelectionRedac: View {
     }
 }
 
+struct ToutesLesRecettes: View {
+    var body: some View {
+        
+        ScrollView {
+            VStack {
+                ForEach(recettes) { recette in
+                    
+                    NavigationLink(
+                        destination: RecetteDetails(recetteChoisie: recette)
+                    ) {
+                        RecetteListRow(myRecette: recette)
+                    }
+                }
+            } .padding() .navigationTitle("Toutes les recettes")
+        }
+    }
+}
+
+
 // Previews
 
 struct RegionsView_Previews: PreviewProvider {
     static var previews: some View {
         RegionsView()
+        
+    }
+}
+
+struct ToutesLesRecettes_Previews: PreviewProvider {
+    static var previews: some View {
+        ToutesLesRecettes()
         
     }
 }

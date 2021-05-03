@@ -162,19 +162,19 @@ struct RecetteListRow: View {
     let myRecette: Recette
     
     var body: some View {
-        HStack(alignment: .top) {
-            
+        HStack(alignment: .top, spacing: 20.0) {
+        
             Image(myRecette.image)
                 .resizable()
                 .aspectRatio(contentMode: .fill)
-                .frame(width: 80, height: 80)
+                .frame(width: 90, height: 90)
                 .cornerRadius(10)
                 .clipShape(Rectangle())
             
-            Spacer()
             
             VStack(alignment: .leading) {
-                VStack(alignment: .leading) {
+                
+                VStack(alignment: .leading, spacing: 3.0) {
                     Text(myRecette.titre)
                         .foregroundColor(Color.black)
                     Text(myRecette.description)
@@ -182,14 +182,24 @@ struct RecetteListRow: View {
                         .foregroundColor(Color.gray)
                 }
                 
-                VStack {
+                HStack {
                     HStack(spacing: 5.0) {
                         Image(systemName: "suit.heart.fill")
                         Text("999")
                     } .font(.caption)
                     .foregroundColor(Color.red)
                     .padding(.top, 1.0)
+                    
+                    
+                    HStack(spacing: 5.0) {
+                        Image(systemName: "timer")
+                        Text("\(myRecette.temps) min")
+                    } .font(.caption)
+                    .foregroundColor(Color.gray)
+                    .padding(.top, 1.0)
+                    
                 }
+                
             }
             
             Spacer()
