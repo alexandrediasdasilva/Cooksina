@@ -36,7 +36,7 @@ struct IngredientListRow: View {
 struct RecetteEdit: View {
     
     @StateObject var viewModel = ViewModel()
-    @State var recette=Recette(titre: "String", description: "ddzad", image: "String", auteur: "String", categories: ["String"], region: .afrique, nbPersonnes: 3, difficulte: .difficile, temps: 30, ingredients: ingredients, instructions: "String", ustensiles: "String")
+    @State var recette=Recette(titre: "String", description: "ddzad", image: "String", auteur: "String", categories: ["String"], region: .afriqueDuNord, nbPersonnes: 3, difficulte: .difficile, temps: 30, ingredients: ingredients, instructions: "String", ustensiles: "String")
     @State var modeEmploi:String = "zadahd geofrforgj vdedzdern fejfùof, jlheide bjdzé ekdhéepo jkzd hdzjakhdl zadgazudzu afdgziear, nvbncxvbn jzdda zhaehazfd sqcvhd eyrrtz"
     @State var v1: String = ""
     @State var v2 = [0, 1, 2, 3]

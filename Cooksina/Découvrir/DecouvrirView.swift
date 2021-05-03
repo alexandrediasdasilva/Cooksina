@@ -89,7 +89,7 @@ struct RegionsView: View {
                                     .shadow(radius: 5)
                                 
                                 Text(region.rawValue)
-                                    .fontWeight(.semibold)
+                                    .fontWeight(.medium)
                                     .foregroundColor(Color.black)
                                     .padding(.top, 4)
                                     .font(.caption2)
@@ -104,8 +104,6 @@ struct RegionsView: View {
             }
         }
     }
-    
-    
     
     // Previews
     
