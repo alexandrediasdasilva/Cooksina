@@ -88,10 +88,7 @@ extension Region {
             return "asieSudEst"
         case .oceanie:
             return "oceanie"
-        default:
-            return ""
         }
-        
     }
     
 }
