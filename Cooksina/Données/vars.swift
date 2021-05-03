@@ -88,7 +88,9 @@ extension Region {
 }
 
 enum Difficulte {
-    case facile, moyen, difficile
+    case facile = "Facile"
+    case moyen = "Moyen"
+    case difficile = "Difficile"
 }
 
 // Utilisateurs
