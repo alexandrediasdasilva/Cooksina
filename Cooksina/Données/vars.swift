@@ -87,7 +87,7 @@ extension Region {
     
 }
 
-enum Difficulte {
+enum Difficulte: String {
     case facile = "Facile"
     case moyen = "Moyen"
     case difficile = "Difficile"
