@@ -27,11 +27,6 @@ struct RegionsView: View {
                     Grid()
                         .padding(.top, 12)
                     
-                    NavigationLink(destination: ToutesLesRecettes()) {
-                        Text("Toutes les recettes")
-                            .frame(maxWidth: .infinity)
-                    } .padding()
-                    
                 }
                 .navigationTitle("Découvrir")
                 .navigationBarItems(
@@ -74,6 +69,15 @@ struct Grid: View {
             Text("Voyagez sans vous déplacer")
                 .font(.title3)
                 .foregroundColor(Color.gray)
+            
+            NavigationLink(destination: ToutesLesRecettes()) {
+                HStack(spacing: 3) {
+                    Text("Toutes les recettes".uppercased())
+                        .fontWeight(.bold)
+                    Image(systemName: "chevron.forward")
+                } .font(.caption)
+                
+            } .padding(.vertical)
             
             LazyVGrid(columns: [
                 GridItem(.flexible(minimum: 50, maximum: 200), spacing: 16, alignment: .top),
