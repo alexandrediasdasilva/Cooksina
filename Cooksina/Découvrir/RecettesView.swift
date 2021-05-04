@@ -180,9 +180,16 @@ struct RecetteListRow: View {
                     Text(myRecette.description)
                         .font(.subheadline)
                         .foregroundColor(Color.gray)
+                        .lineLimit(1)
+                    if let utilisateur = myRecette.createur() {
+                        InfosUtilisateur(utilisateur: utilisateur)
+                    } else {
+                        Text(myRecette.auteur)
+                    }
                 }
                 
                 HStack {
+                    
                     HStack(spacing: 5.0) {
                         Image(systemName: "suit.heart.fill")
                         Text("999")
@@ -207,6 +214,25 @@ struct RecetteListRow: View {
         } .padding(.bottom)
     }
 }
+
+struct InfosUtilisateur: View {
+    
+    let utilisateur: Utilisateur
+    
+    var body: some View {
+        HStack {
+            Image(utilisateur.photo)
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .frame(width: 20, height: 20)
+                .clipShape(Circle())
+            Text("par \(utilisateur.nom)")
+                .font(.caption)
+                .foregroundColor(.gray)
+        }
+    }
+}
+
 
 struct RecettesView_Previews: PreviewProvider {
     static var previews: some View {

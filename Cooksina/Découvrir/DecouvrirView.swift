@@ -29,23 +29,29 @@ struct RegionsView: View {
                     
                 }
                 .navigationTitle("Découvrir")
+                
                 .navigationBarItems(
-                    //                leading:
-                    
-                    //                                    NavigationLink(destination: RecetteDetails(recetteChoisie: randomRecette)
-                    //                                    ) {
-                    //                                        Button(action: {RandomRecette()}) {
-                    //                                            Text("Surprenez-moi")
-                    //                                            .fontWeight(.regular)
-                    //                                        }
-                    //                                    }
-                    
-                    
-                    //                                    Button(action: {}) {
-                    //                                        Text("Surprenez-moi")
-                    //                                            .fontWeight(.regular)
-                    //                                    }
-                    //                                ,
+                    leading:
+                        
+                        Image("cooksina-lettering")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(height: 35)
+                        
+//                        NavigationLink(destination: RecetteDetails(recetteChoisie: randomRecette)
+//                        ) {
+//                            Button(action: {RandomRecette()}) {
+//                                Text("Surprenez-moi")
+//                                    .fontWeight(.regular)
+//                            }
+//                        }
+//
+//
+//                    Button(action: {}) {
+//                        Text("Surprenez-moi")
+//                            .fontWeight(.regular)
+//                    }
+                    ,
                     trailing:
                         NavigationLink(destination: RecetteEdit()) {
                             Image(systemName: "plus")
@@ -63,11 +69,12 @@ struct Grid: View {
         
         VStack(alignment: .leading) {
             Text("Les régions 🗺️")
-                .font(.title)
+                .font(.title2)
+                //                .font(Font.custom("Rubik-Bold", size: 28))
+                
                 .fontWeight(.bold)
             
             Text("Voyagez sans vous déplacer")
-                .font(.title3)
                 .foregroundColor(Color.gray)
             
             NavigationLink(destination: ToutesLesRecettes()) {
@@ -101,10 +108,11 @@ struct Grid: View {
                                 .shadow(radius: 5)
                             
                             Text(region.rawValue)
+                                .font(.caption2)
                                 .fontWeight(.medium)
                                 .foregroundColor(Color.black)
                                 .padding(.top, 4)
-                                .font(.caption2)
+                            //                                .font(Font.custom("Rubik-Regular", size: 12))
                             
                             Spacer()
                         }
@@ -122,11 +130,11 @@ struct SelectionRedac: View {
         
         VStack(alignment: .leading) {
             Text("La sélection de la rédac’ 😋")
-                .font(.title)
+                .font(.title2)
                 .fontWeight(.bold)
+            //                .font(Font.custom("Rubik-Bold", size: 24))
             
             Text("À table !")
-                .font(.title3)
                 .foregroundColor(Color.gray)
             
             ScrollView(.horizontal, showsIndicators: false) {
@@ -194,10 +202,10 @@ struct RegionsView_Previews: PreviewProvider {
         
     }
 }
-
-struct ToutesLesRecettes_Previews: PreviewProvider {
-    static var previews: some View {
-        ToutesLesRecettes()
-        
-    }
-}
+//
+//struct ToutesLesRecettes_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ToutesLesRecettes()
+//        
+//    }
+//}

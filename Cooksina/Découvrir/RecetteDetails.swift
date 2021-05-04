@@ -10,7 +10,7 @@ import SwiftUI
 struct RecetteDetails: View {
 
     @State var detailRecette = ""
-        @State private var hideText : Bool = false
+    @State private var hideText : Bool = false
     
     let recetteChoisie: Recette
     
@@ -38,6 +38,13 @@ struct RecetteDetails: View {
                         .aspectRatio(contentMode: /*@START_MENU_TOKEN@*/.fill/*@END_MENU_TOKEN@*/)
                         .frame(height: 250)
                        .clipShape(Rectangle())
+            
+            if let utilisateur = recetteChoisie.createur() {
+                InfosUtilisateur(utilisateur: utilisateur)
+            } else {
+                Text(recetteChoisie.auteur)
+            }
+            
             lesIcones(myrecetteChoisie: recetteChoisie)
                 
                 VStack{
@@ -48,7 +55,7 @@ struct RecetteDetails: View {
                     .pickerStyle(SegmentedPickerStyle())
                     
                     
-                    if detailRecette == "Ustenciles"{
+                    if detailRecette == "Ustenciles" {
                         matériel()
                     } else {
                         Laliste()
@@ -139,8 +146,6 @@ struct Laliste: View {
         }
     }
 }
-
-
 
 //
 //{

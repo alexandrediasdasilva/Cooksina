@@ -23,6 +23,10 @@ struct Recette: Identifiable {
     var ingredients = [Ingredient]()
     var instructions: String
     var ustensiles: String
+    
+    func createur() -> Utilisateur? {
+        return utilisateurs.first(where: {auteur == $0.nom})
+    }
 }
 
 // On définit une struct ingrédient composée d'une quantité et d'un nom
@@ -105,5 +109,11 @@ struct Utilisateur: Identifiable {
     var id = UUID()
     var nom: String
     var photo: String
-    var recettes: [String]
+    var ville: String
+//    var recettes: [Recette]
 }
+
+var utilisateurs = [
+    Utilisateur(nom: "Jason Briscoe", photo: "jason-briscoe", ville: "Paris"),
+    Utilisateur(nom: "Jane Doe", photo: "jane-doe", ville: "Toulouse")
+]

@@ -78,7 +78,7 @@ var recettes = [
     Recette(
         titre: "Soupe à la citrouille",
         description: "Spécialité indienne assaisonnée au paprika et au curry",
-        image: "soupe-citrouille",
+        image: "soupe de butternut",
         auteur: "Jane Doe",
         categories: ["Repas"],
         region: .asieDuSud,
@@ -143,7 +143,7 @@ var recettes = [
     Recette(
         titre: "Mafé",
         description: "Spécialité africaine",
-        image: "mafé",
+        image: "mafe",
         auteur: "Jane Doe",
         categories: ["Repas"],
         region: .afriqueCentrale,

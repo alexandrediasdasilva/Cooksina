@@ -60,9 +60,36 @@ struct ProfilView: View {
                                 }
                                 .font(.caption)
                             }
-
+                            
                         }
                     } .padding(.bottom)
+                    
+                    Spacer()
+                    
+                    HStack {
+                        
+                            Text("Modifier profil")
+                                .font(.subheadline)
+                                .fontWeight(.semibold)
+                                .foregroundColor(Color.black)
+                                .frame(minWidth: 0, maxWidth: .infinity)
+                                .padding(8)
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 10)
+                                        .stroke(Color.gray, lineWidth: 1))
+                        
+                        NavigationLink(destination: RecetteEdit()) {
+                            Text("Nouvelle recette")
+                                .font(.subheadline)
+                                .fontWeight(.semibold)
+                                .foregroundColor(Color.black)
+                                .frame(minWidth: 0, maxWidth: .infinity)
+                                .padding(8)
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 10)
+                                        .stroke(Color.gray, lineWidth: 1))
+                        }
+                    }
                     
                     Spacer()
                     
@@ -80,7 +107,7 @@ struct ProfilView: View {
                             }
                         }
                     }
-
+                    
                 } .padding()
             } .navigationTitle("Profil")
         }
