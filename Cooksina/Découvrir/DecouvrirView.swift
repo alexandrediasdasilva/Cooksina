@@ -72,7 +72,7 @@ struct Grid: View {
             
             NavigationLink(destination: ToutesLesRecettes()) {
                 HStack(spacing: 3) {
-                    Text("Toutes les recettes".uppercased())
+                    Text("Toutes nos recettes".uppercased())
                         .fontWeight(.bold)
                     Image(systemName: "chevron.forward")
                 } .font(.caption)
@@ -145,9 +145,9 @@ struct SelectionRedac: View {
                                 
                                 ZStack {
                                     Rectangle()
-                                        .fill(Color.black)
+                                        .fill(LinearGradient(gradient: Gradient(colors: [.black, .clear]), startPoint: .bottom, endPoint: .top))
                                         .frame(width: 150, height: 80)
-                                        .opacity(0.5)
+                                        .opacity(0.9)
                                     
                                     Text(recette.titre)
                                         .font(.subheadline)
@@ -157,7 +157,7 @@ struct SelectionRedac: View {
                                 }
                                 
                             } .cornerRadius(10)
-                        }
+                        } .shadow(radius: 2)
                         
                     }
                 }
