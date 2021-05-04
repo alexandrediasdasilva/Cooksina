@@ -25,7 +25,7 @@ struct Recette: Identifiable {
     var ustensiles: String
     
     func createur() -> Utilisateur? {
-        return utilisateurs.first(where: {auteur == $0.nom})
+        utilisateurs.first(where: {auteur == $0.nom})
     }
 }
 
@@ -115,5 +115,21 @@ struct Utilisateur: Identifiable {
 
 var utilisateurs = [
     Utilisateur(nom: "Jason Briscoe", photo: "jason-briscoe", ville: "Paris"),
-    Utilisateur(nom: "Jane Doe", photo: "jane-doe", ville: "Toulouse")
+    Utilisateur(nom: "Jane Doe", photo: "jane-doe", ville: "Toulouse"),
+    Utilisateur(nom: "Mélodie Guibord", photo: "P2", ville: "Nice"),
+    Utilisateur(nom: "Pansy Fontaine", photo: "P3", ville: "Bordeaux"),
+    Utilisateur(nom: "Henri Aubin", photo: "P1", ville: "Chartres"),
+    Utilisateur(nom: "Marcel Champion", photo: "P4", ville: "Orléans"),
+    Utilisateur(nom: "Benjamin Danterre", photo: "P6", ville: "Paris"),
+    Utilisateur(nom: "Kévin Moisson", photo: "P7", ville: "Marseille"),
+    Utilisateur(nom: "Ketlin Jannaire", photo: "P5", ville: "Tours"),
+    Utilisateur(nom: "Emily Pomdapi", photo: "P9", ville: "Nanterre"),
+    Utilisateur(nom: "Jessica Boullot", photo: "P11", ville: "Montpellier"),
+    Utilisateur(nom: "Frédéric Agency", photo: "P8", ville: "Tourcoing"),
+    Utilisateur(nom: "Eric Rodriguez", photo: "P10", ville: "Lille"),
+    Utilisateur(nom: "Stéphanie Pallambra", photo: "P12", ville: "Lyon"),
+    Utilisateur(nom: "Justine Pensai", photo: "P13", ville: "Dijon"),
+    Utilisateur(nom: "Julie Coëtlin", photo: "P14", ville: "Biarritz"),
+    Utilisateur(nom: "Marcus Lavet", photo: "P15", ville: "La Rochelle"),
 ]
+

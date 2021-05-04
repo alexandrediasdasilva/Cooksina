@@ -9,7 +9,7 @@ import SwiftUI
 
 struct RecetteDetails: View {
     
-    @State var detailRecette = ""
+    @State var pickerElementSelectionne = "Ingrédients"
     @State private var hideText : Bool = false
     
     let recetteChoisie: Recette
@@ -48,55 +48,81 @@ struct RecetteDetails: View {
                             .foregroundColor(Color.gray)
                     }
                     
-                    if let utilisateur = recetteChoisie.createur() {
-                        
-                        NavigationLink(destination: ProfilView()) {
-                            InfosUtilisateur(utilisateur: utilisateur)
-                        }
-                        
-                    } else {
-                        Text(recetteChoisie.auteur)
-                    }
-                    
                     HStack {
                         Image(systemName: "suit.heart.fill")
                         Text("999")
                     } .font(.caption)
                     .foregroundColor(Color.red)
-                        
+                    
                     
                 } .padding(5)
                 
-                Text("\(recetteChoisie.description)")
-                    .font(.subheadline)
-                    .fontWeight(.light)
-                    .italic()
-                    .multilineTextAlignment(.center)
-                    .padding(.horizontal)
+                Divider()
+                
+                
+                NavigationLink(destination: ProfilView()) {
+                    
+                    HStack(alignment: .top, spacing: 20) {
+                        
+                        if let utilisateur = recetteChoisie.createur() {
+                            
+                            
+                            InfosAuteur(utilisateur: utilisateur)
+                            
+                            
+                        } else {
+                            Text(recetteChoisie.auteur)
+                        }
+                                                
+                        VStack(alignment: .leading) {
+                            
+                            
+                            Text("“\(recetteChoisie.description)”")
+                                .font(.subheadline)
+                                .fontWeight(.light)
+                                .italic()
+                            
+                        } .frame(width: 250, alignment: .topLeading)
+                        
+                    } .foregroundColor(.black) .padding()
+                }
                 
                 Divider()
                 
-                lesIcones(myrecetteChoisie: recetteChoisie)
+                StatsRecette(myrecetteChoisie: recetteChoisie)
                 
-                VStack{
+                Divider()
+                
+                VStack {
                     
-                    Picker(selection: $detailRecette, label: /*@START_MENU_TOKEN@*/Text("Picker")/*@END_MENU_TOKEN@*/, content: {
+                    Picker(selection: $pickerElementSelectionne, label: Text("")) {
                         Text("Ingrédients").tag("Ingrédients")
                         Text("Ustensiles").tag("Ustensiles")
-                    })
+                    }
                     .pickerStyle(SegmentedPickerStyle())
                     .padding()
                     
-                    if detailRecette == "Ustenciles" {
-                        Text("Remplacer par liste des ustensiles dynamique")
-                    } else {
+                    if pickerElementSelectionne == "Ingrédients" {
+                        Text("Remplacer par liste des ingrédients dynamique")
+                    } else if pickerElementSelectionne == "Ustensiles" {
                         Text("Remplacer par liste des ustensiles dynamique")
                     }
                     
                     Divider()
                     
-                    Text(recetteChoisie.instructions)
-                        .padding()
+                    
+                    VStack(alignment: .leading) {
+                        Text("Préparation".uppercased())
+                                .font(.headline)
+                                .fontWeight(.semibold)
+                            .padding()
+                        
+                        Text(recetteChoisie.instructions)
+                            .padding()
+                    }
+                        
+                   
+                    
                     
                 }
                 
@@ -105,14 +131,9 @@ struct RecetteDetails: View {
     }
 } 
 
-struct RecetteDetails_Previews: PreviewProvider {
-    
-    static var previews: some View {
-        RecetteDetails(recetteChoisie: recettes[1])
-    }
-}
 
-struct lesIcones: View {
+
+struct StatsRecette: View {
     
     let myrecetteChoisie: Recette
     
@@ -121,34 +142,28 @@ struct lesIcones: View {
             Spacer()
             
             VStack(alignment: .center){
-                Image("toque")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 60, height: 30)
+                Image(systemName: "gauge")
+                    .padding(.bottom, 1)
                 Text("\(myrecetteChoisie.difficulte.rawValue)")
                     .font(.caption)}
             
             Spacer()
             
             VStack(alignment: .center){
-                Image("chrono")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 60, height: 30)
+                Image(systemName: "timer")
+                    .padding(.bottom, 1)
                 Text("\(myrecetteChoisie.temps) min").font(.caption)}
             
             Spacer()
-
+            
             VStack(alignment: .center){
-                Image("groupes")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 30, height: 30)
-                Text("\(myrecetteChoisie.nbPersonnes) pers")
+                Image(systemName: "person.3")
+                    .padding(.bottom, 1)
+                Text("\(myrecetteChoisie.nbPersonnes) pers.")
                     .font(.caption)}
             
             Spacer()
-        }
+        } .padding()
     }
 }
 
@@ -176,54 +191,28 @@ struct matériel: View {
     }
 }
 
+struct InfosAuteur: View {
+    
+    let utilisateur: Utilisateur
+    
+    var body: some View {
+        VStack {
+            Image(utilisateur.photo)
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .frame(width: 80, height: 80)
+                .clipShape(Circle())
+            
+            Text(utilisateur.nom)
+                .font(.headline)
+                .padding(.bottom, 1)
+        }
+    }
+}
 
-//
-//{
-//    VStack(alignment: .leading) {
-//        ScrollView {
-//            Image(recetteChoisie.image)
-//                .resizable()
-//                .aspectRatio(contentMode: .fill)
-//                .frame(height: 300)
-//                .clipShape(Rectangle())
-//            Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nunc scelerisque viverra mauris in aliquam sem. A iaculis at erat pellentesque adipiscing commodo elit. Netus et malesuada fames ac turpis. Adipiscing elit pellentesque habitant morbi tristique senectus et netus. Sapien et ligula ullamcorper malesuada proin libero. Nunc sed velit dignissim sodales ut eu sem integer. Nullam eget felis eget nunc. Aliquet eget sit amet tellus cras adipiscing enim eu turpis. Auctor augue mauris augue neque gravida in. Netus et malesuada fames ac turpis. Adipiscing elit pellentesque habitant morbi tristique senectus et netus. Sapien et ligula ullamcorper malesuada proin libero. Nunc sed velit dignissim sodales ut eu sem integer. Nullam eget felis eget nunc. Aliquet eget sit amet tellus cras adipiscing enim eu turpis. Auctor augue mauris augue neque gravida in.") .padding()
-//            Spacer()
-//        } .navigationTitle("\(recetteChoisie.titre)")
-//    }
-//}
-
-
-////
-////  RecetteDetails.swift
-////  Cooksina
-////
-////  Created by Alexandre Dias Da Silva on 28/04/2021.
-////
-//
-//import SwiftUI
-//
-//struct RecetteDetails: View {
-//
-//    let recetteChoisie: Recette
-//
-//    var body: some View {
-//        VStack(alignment: .leading) {
-//            ScrollView {
-//                Image(recetteChoisie.image)
-//                    .resizable()
-//                    .aspectRatio(contentMode: .fill)
-//                    .frame(height: 300)
-//                    .clipShape(Rectangle())
-//                Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nunc scelerisque viverra mauris in aliquam sem. A iaculis at erat pellentesque adipiscing commodo elit. Netus et malesuada fames ac turpis. Adipiscing elit pellentesque habitant morbi tristique senectus et netus. Sapien et ligula ullamcorper malesuada proin libero. Nunc sed velit dignissim sodales ut eu sem integer. Nullam eget felis eget nunc. Aliquet eget sit amet tellus cras adipiscing enim eu turpis. Auctor augue mauris augue neque gravida in. Netus et malesuada fames ac turpis. Adipiscing elit pellentesque habitant morbi tristique senectus et netus. Sapien et ligula ullamcorper malesuada proin libero. Nunc sed velit dignissim sodales ut eu sem integer. Nullam eget felis eget nunc. Aliquet eget sit amet tellus cras adipiscing enim eu turpis. Auctor augue mauris augue neque gravida in.") .padding()
-//                Spacer()
-//            } .navigationTitle("\(recetteChoisie.titre)")
-//        }
-//    }
-//}
-//
-//struct RecetteDetails_Previews: PreviewProvider {
-//
-//    static var previews: some View {
-//        RecetteDetails(recetteChoisie: recettes[1])
-//    }
-//}
+struct RecetteDetails_Previews: PreviewProvider {
+    
+    static var previews: some View {
+        RecetteDetails(recetteChoisie: recettes[11])
+    }
+}

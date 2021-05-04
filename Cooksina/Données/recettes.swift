@@ -1,6 +1,6 @@
 var recettes = [
     Recette(
-        titre: "Poulet curry aux oignons",
+        titre: "Le Poulet curry aux oignons",
         description: "Spécialité indienne assaisonnée au paprika et au curry",
         image: "poulet-curry",
         auteur: "Jane Doe",
@@ -39,7 +39,7 @@ var recettes = [
         ustensiles: "Poêle, couteau, cuillère, planche à découper"),
     
     Recette(
-        titre: "Ragoût au bœuf",
+        titre: "Le fameux Ragoût au bœuf",
         description: "Spécialité indienne assaisonnée au paprika et au curry",
         image: "ragout-boeuf",
         auteur: "Jane Doe",
@@ -47,7 +47,7 @@ var recettes = [
         region: .asieDuSud,
         nbPersonnes: 4,
         difficulte: .facile,
-        temps: 20,
+        temps: 135,
         instructions: """
         ÉTAPE 1
         Mélangez les gousses d'ail ecrasées, le vin, le jus de citron, la moitié du curry et le concentré de tomates.
@@ -76,7 +76,7 @@ var recettes = [
         ustensiles: "Poêle, couteau, cuillère, planche à découper, cocotte"),
     
     Recette(
-        titre: "Soupe à la citrouille",
+        titre: "La Soupe à la citrouille",
         description: "Spécialité indienne assaisonnée au paprika et au curry",
         image: "soupe de butternut",
         auteur: "Jane Doe",
@@ -95,15 +95,15 @@ var recettes = [
         ustensiles: "Poêle, couteau, cuillère, planche à découper, mixeur, cocotte"),
     
     Recette(
-        titre: "Butter Chicken",
+        titre: "Le Butter Chicken",
         description: "Spécialité indienne au poulet assaisonné au graham de Masala",
         image: "butter-chicken",
         auteur: "Jane Doe",
         categories: ["Repas"],
         region: .asieDuSud,
-        nbPersonnes: 4,
+        nbPersonnes: 6,
         difficulte: .facile,
-        temps: 20,
+        temps: 40,
         instructions: """
         ÉTAPE 1
         Préparer la marinade : mélanger 1 pot de yoghourt avec les massalas (tandoori et garam), cannelle, clous de girofle et cumin. Saler.
@@ -141,7 +141,7 @@ var recettes = [
         ustensiles: "Poêle, couteau, cuillère, planche à découper, mixeur, pinceau, Cocotte"),
     
     Recette(
-        titre: "Mafé",
+        titre: "Le Mafé",
         description: "Spécialité africaine",
         image: "mafe",
         auteur: "Jane Doe",
@@ -149,7 +149,7 @@ var recettes = [
         region: .afriqueCentrale,
         nbPersonnes: 4,
         difficulte: .facile,
-        temps: 20,
+        temps: 75,
         instructions: """
         ÉTAPE 1
         Faire revenir le poulet dans l'huile d'arachide bien chaude.
@@ -189,7 +189,7 @@ var recettes = [
         region: .europe,
         nbPersonnes: 4,
         difficulte: .facile,
-        temps: 20,
+        temps: 15,
         instructions: """
         ÉTAPE 1
         Éplucher et râper le concombre, puis le mettre à égoutter dans une passoire (l'astuce est de saler le concombre pour le faire dégorger plus vite).
@@ -212,15 +212,15 @@ var recettes = [
         ustensiles: "couteau, cuillère, planche à découper"),
     
     Recette(
-        titre: "Spaghetti bolognaise",
+        titre: "Les Spaghettis bolognaise",
         description: "Spécialité italienne",
         image: "bolognese",
         auteur: "Jane Doe",
         categories: ["Repas"],
         region: .europe,
-        nbPersonnes: 4,
+        nbPersonnes: 8,
         difficulte: .facile,
-        temps: 20,
+        temps: 50,
         instructions: """
         ÉTAPE 1
         La cuisson se fait dans une sauteuse. Faire revenir dans de l'huile d'olive chaude l'oignon et les 2 gousses d'ail grossièrement hachés, à petit feu pour ne pas qu'ils brûlent. Mélanger souvent.
@@ -252,15 +252,15 @@ var recettes = [
         ustensiles: "Poêle, couteau, cuillère, planche à découper, Casserole"),
     
     Recette(
-        titre: "Houmous",
+        titre: "Le Houmous",
         description: "Spécialité libanaise du proche-Orient composé de pois-chiche",
         image: "houmous",
         auteur: "Jane Doe",
         categories: ["Repas"],
         region: .asieOccidentale,
-        nbPersonnes: 4,
+        nbPersonnes: 7,
         difficulte: .facile,
-        temps: 20,
+        temps: 150,
         instructions: """
         ÉTAPE 1
         La veille, mettre à tremper les pois chiches dans de l'eau froide.
@@ -292,7 +292,7 @@ var recettes = [
         ustensiles: "Casserole, couteau, cuillère, planche à découper"),
     
     Recette(
-        titre: "Guacamole",
+        titre: "Le Guacamole maison",
         description: "Préparation méxicaine à base d'avocat et de piments frais.",
         image: "guacamole",
         auteur: "Jane Doe",
@@ -300,7 +300,7 @@ var recettes = [
         region: .ameriqueDuSud,
         nbPersonnes: 4,
         difficulte: .facile,
-        temps: 20,
+        temps: 10,
         instructions: """
         ÉTAPE 1
         Emincer l'oignon frais et les feuilles de coriandre.
@@ -314,13 +314,13 @@ var recettes = [
         ustensiles: "couteau, cuillère, planche à découper"),
     
     Recette(
-        titre: "Pad Thaï",
+        titre: "Le Pad Thaï",
         description: "Plat traditionnel thaïlandais à base de nouilles de riz",
         image: "PadThai",
         auteur: "Jane Doe",
         categories: ["Repas"],
         region: .asieDuSudEst,
-        nbPersonnes: 4,
+        nbPersonnes: 2,
         difficulte: .facile,
         temps: 20,
         instructions: """
@@ -345,15 +345,15 @@ var recettes = [
         ustensiles: "Poêle, couteau, cuillère, planche à découper, Wok"),
     
     Recette(
-        titre: "Couscous",
+        titre: "Le Couscous poulet merguez",
         description: "Plat berbère de seùmoule de blé accompagné de ses multiples légumes",
         image: "Couscous",
         auteur: "Jane Doe",
         categories: ["Repas"],
         region: .afriqueDuNord,
-        nbPersonnes: 4,
+        nbPersonnes: 6,
         difficulte: .facile,
-        temps: 20,
+        temps: 65,
         instructions: """
         ÉTAPE 1
         Lavez et épluchez les carottes, les navets et les tomates et les couper en cubes.
@@ -382,15 +382,15 @@ var recettes = [
         ustensiles: "Poêle, couteau, cuillère, planche à découper, Cocotte minute, Cuiseur Vapeur"),
     
     Recette(
-        titre: "Pastel de nata",
+        titre: "Les Pasteis de nata",
         description: "Patisserie à la crême provenant du Portugal",
         image: "pasteis",
         auteur: "Jane Doe",
         categories: ["Dessert"],
         region: .europe,
-        nbPersonnes: 4,
+        nbPersonnes: 12,
         difficulte: .facile,
-        temps: 20,
+        temps: 45,
         instructions: """
         ÉTAPE 1
         Dans une casserole, mettre le lait, le sucre, la maïzéna, et l zeste de citron.
