@@ -9,10 +9,10 @@ import SwiftUI
 
 struct RegionsView: View {
     
-    func RandomRecette() -> Recette {
-        let randomRecette = recettes.randomElement()!
-        return randomRecette
-    }
+    //    func RandomRecette() -> Recette {
+    //        let randomRecette = recettes.randomElement()!
+    //        return randomRecette
+    //    }
     
     var body: some View {
         
@@ -27,36 +27,44 @@ struct RegionsView: View {
                     Grid()
                         .padding(.top, 12)
                     
+                    Image("cooksina-lettering")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 150)
+                        .padding()
                 }
                 .navigationTitle("Découvrir")
                 
                 .navigationBarItems(
-                    leading:
-                        
-                        Image("cooksina-lettering")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(height: 35)
-                        
-//                        NavigationLink(destination: RecetteDetails(recetteChoisie: randomRecette)
-//                        ) {
-//                            Button(action: {RandomRecette()}) {
-//                                Text("Surprenez-moi")
-//                                    .fontWeight(.regular)
-//                            }
-//                        }
-//
-//
-//                    Button(action: {}) {
-//                        Text("Surprenez-moi")
-//                            .fontWeight(.regular)
-//                    }
-                    ,
+                    //                    leading:
+                    //
+                    //                        Image("cooksina-lettering")
+                    //                        .resizable()
+                    //                        .scaledToFit()
+                    //                        .frame(height: 35),
+                    
+                    //                        NavigationLink(destination: RecetteDetails(recetteChoisie: randomRecette)
+                    //                        ) {
+                    //                            Button(action: {RandomRecette()}) {
+                    //                                Text("Surprenez-moi")
+                    //                                    .fontWeight(.regular)
+                    //                            }
+                    //                        }
+                    //
+                    //
+                    //                    Button(action: {}) {
+                    //                        Text("Surprenez-moi")
+                    //                            .fontWeight(.regular)
+                    //                    }
+                    //                    ,
                     trailing:
                         NavigationLink(destination: RecetteEdit()) {
                             Image(systemName: "plus")
+                                .frame(width: 50, height: 50)
                         }
                 )
+                
+                
             }
         }
     }
@@ -70,8 +78,6 @@ struct Grid: View {
         VStack(alignment: .leading) {
             Text("Les régions 🗺️")
                 .font(.title2)
-                //                .font(Font.custom("Rubik-Bold", size: 28))
-                
                 .fontWeight(.bold)
             
             Text("Voyagez sans vous déplacer")
@@ -112,7 +118,6 @@ struct Grid: View {
                                 .fontWeight(.medium)
                                 .foregroundColor(Color.black)
                                 .padding(.top, 4)
-                            //                                .font(Font.custom("Rubik-Regular", size: 12))
                             
                             Spacer()
                         }
@@ -132,7 +137,6 @@ struct SelectionRedac: View {
             Text("La sélection de la rédac’ 😋")
                 .font(.title2)
                 .fontWeight(.bold)
-            //                .font(Font.custom("Rubik-Bold", size: 24))
             
             Text("À table !")
                 .foregroundColor(Color.gray)
@@ -199,9 +203,9 @@ struct ToutesLesRecettes: View {
 struct RegionsView_Previews: PreviewProvider {
     static var previews: some View {
         RegionsView()
-        
     }
 }
+
 //
 //struct ToutesLesRecettes_Previews: PreviewProvider {
 //    static var previews: some View {

@@ -18,8 +18,6 @@
 		660AB41E2639901D00D851E8 /* DecouvrirView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660AB41D2639901D00D851E8 /* DecouvrirView.swift */; };
 		660AB4242639B53900D851E8 /* vars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660AB4232639B53900D851E8 /* vars.swift */; };
 		662C89E7263CAF8B00DF41F8 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662C89E6263CAF8B00DF41F8 /* ImagePicker.swift */; };
-		6637C79226414DB20064406B /* Rubik-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6637C79126414DB20064406B /* Rubik-Bold.ttf */; };
-		6637C79526414EE90064406B /* Rubik-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6637C79426414EE90064406B /* Rubik-Regular.ttf */; };
 		665EA3A0263FF8E500B8A1FD /* old_CarteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665EA39F263FF8E500B8A1FD /* old_CarteView.swift */; };
 		665EA3A8263FFAB000B8A1FD /* recettes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665EA3A7263FFAB000B8A1FD /* recettes.swift */; };
 		669AC33D263B49D700B8922B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 669AC33C263B49D700B8922B /* Assets.xcassets */; };
@@ -39,8 +37,6 @@
 		660AB41D2639901D00D851E8 /* DecouvrirView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecouvrirView.swift; sourceTree = "<group>"; };
 		660AB4232639B53900D851E8 /* vars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = vars.swift; sourceTree = "<group>"; };
 		662C89E6263CAF8B00DF41F8 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
-		6637C79126414DB20064406B /* Rubik-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Bold.ttf"; sourceTree = "<group>"; };
-		6637C79426414EE90064406B /* Rubik-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Regular.ttf"; sourceTree = "<group>"; };
 		665EA39F263FF8E500B8A1FD /* old_CarteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = old_CarteView.swift; sourceTree = "<group>"; };
 		665EA3A7263FFAB000B8A1FD /* recettes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = recettes.swift; sourceTree = "<group>"; };
 		669AC33C263B49D700B8922B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -82,7 +78,6 @@
 				665EA3AC263FFB0F00B8A1FD /* Profil */,
 				665EA3AA263FFAD200B8A1FD /* Données */,
 				660AB3FF26394F4C00D851E8 /* Info.plist */,
-				6637C78F26414D990064406B /* Polices */,
 				669AC33C263B49D700B8922B /* Assets.xcassets */,
 				660AB3FC26394F4C00D851E8 /* Preview Content */,
 			);
@@ -95,15 +90,6 @@
 				660AB3FD26394F4C00D851E8 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		6637C78F26414D990064406B /* Polices */ = {
-			isa = PBXGroup;
-			children = (
-				6637C79426414EE90064406B /* Rubik-Regular.ttf */,
-				6637C79126414DB20064406B /* Rubik-Bold.ttf */,
-			);
-			path = Polices;
 			sourceTree = "<group>";
 		};
 		665EA3A3263FF97000B8A1FD /* Découvrir */ = {
@@ -205,8 +191,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				669AC33D263B49D700B8922B /* Assets.xcassets in Resources */,
-				6637C79526414EE90064406B /* Rubik-Regular.ttf in Resources */,
-				6637C79226414DB20064406B /* Rubik-Bold.ttf in Resources */,
 				660AB3FE26394F4C00D851E8 /* Preview Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

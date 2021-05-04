@@ -17,28 +17,30 @@ struct RecettesView: View {
     
     var body: some View {
         
-        VStack {
+        ScrollView {
             VStack {
-                BarreDeRecherche(
-                    texteRecherche: $texteRecherche,
-                    isSearching: $isSearching,
-                    showingSheet: $showingSheet
-                )
-            }
-            
-            VStack {
-                ForEach(recettes.filter({ $0.region == regionChoisie && ($0.titre.localizedCaseInsensitiveContains(texteRecherche) || $0.description.localizedCaseInsensitiveContains(texteRecherche) || texteRecherche.isEmpty) })) { recette in
-                    
-                    NavigationLink(
-                        destination: RecetteDetails(recetteChoisie: recette)
-                    ) {
-                        RecetteListRow(myRecette: recette)
-                    }
-                    
+                VStack {
+                    BarreDeRecherche(
+                        texteRecherche: $texteRecherche,
+                        isSearching: $isSearching,
+                        showingSheet: $showingSheet
+                    )
                 }
-            } .padding()
-            Spacer()
-        } .navigationTitle("\(regionChoisie.rawValue)")
+                
+                VStack {
+                    ForEach(recettes.filter({ $0.region == regionChoisie && ($0.titre.localizedCaseInsensitiveContains(texteRecherche) || $0.description.localizedCaseInsensitiveContains(texteRecherche) || texteRecherche.isEmpty) })) { recette in
+                        
+                        NavigationLink(
+                            destination: RecetteDetails(recetteChoisie: recette)
+                        ) {
+                            RecetteListRow(myRecette: recette)
+                        }
+                        
+                    }
+                } .padding()
+                Spacer()
+            } .navigationTitle("\(regionChoisie.rawValue)")
+        }
     }
 }
 
@@ -163,7 +165,7 @@ struct RecetteListRow: View {
     
     var body: some View {
         HStack(alignment: .top, spacing: 20.0) {
-        
+            
             Image(myRecette.image)
                 .resizable()
                 .aspectRatio(contentMode: .fill)
