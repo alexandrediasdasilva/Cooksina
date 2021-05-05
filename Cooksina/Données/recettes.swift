@@ -64,7 +64,7 @@ var recettes = [
             Ingredient(nom: "paprika", quantite: "1", unite: "cc", suppression: false),
             Ingredient(nom: "curry", quantite: "1", unite: "cc", suppression: false),
             Ingredient(nom: "vin-rouge", quantite: "1", unite: "verre", suppression: false),
-            Ingredient(nom: "lait de coco", quantite: "1/5", unite: "l", suppression: false),
+            Ingredient(nom: "lait de coco", quantite: "1/5", unite: "L", suppression: false),
             Ingredient(nom: "riz", quantite: "250", unite: "g", suppression: false)
         ],
         
@@ -318,13 +318,13 @@ var recettes = [
             Ingredient(nom: "eau", quantite: "2", unite: "L", suppression: false),
             Ingredient(nom: "laurier", quantite: "5", unite: "feuille", suppression: false),
             Ingredient(nom: "ail", quantite: "1", unite: "gousse", suppression: false),
-            Ingredient(nom: "citron", quantite: "2", unite: " ", suppression: false),
-            Ingredient(nom: "olives", quantite: "5", unite: " ", suppression: false),
+            Ingredient(nom: "citron", quantite: "2", unite: "", suppression: false),
+            Ingredient(nom: "olives", quantite: "5", unite: "", suppression: false),
             Ingredient(nom: "huile", quantite: "1O", unite: "cl", suppression: false),
             Ingredient(nom: "sel", quantite: "1", unite: "cc", suppression: false),
             Ingredient(nom: "poivre", quantite: "1", unite: "cc", suppression: false),
             Ingredient(nom: "piment", quantite: "1", unite: "pincée", suppression: false),
-            Ingredient(nom: "pain libanais", quantite: "", unite: " ", suppression: false),
+            Ingredient(nom: "pain libanais", quantite: "", unite: "", suppression: false),
         ],
         
         instructions: """
@@ -368,12 +368,12 @@ var recettes = [
         difficulte: .facile,
         temps: 10,
         ingredients: [
-            Ingredient(nom: "oignone", quantite: "1", unite: " ", suppression: false),
+            Ingredient(nom: "oignone", quantite: "1", unite: "", suppression: false),
             Ingredient(nom: "coriande", quantite: "200", unite: "g", suppression: false),
-            Ingredient(nom: "avocat", quantite: "1", unite: " ", suppression: false),
-            Ingredient(nom: "citron", quantite: "1", unite: " ", suppression: false),
-            Ingredient(nom: "sel", quantite: " ", unite: "cc", suppression: false),
-            Ingredient(nom: "poivre", quantite: " ", unite: " ", suppression: false),
+            Ingredient(nom: "avocat", quantite: "1", unite: "", suppression: false),
+            Ingredient(nom: "citron", quantite: "1", unite: "", suppression: false),
+            Ingredient(nom: "sel", quantite: "", unite: "cc", suppression: false),
+            Ingredient(nom: "poivre", quantite: "", unite: "", suppression: false),
         ],
         
         instructions: """
@@ -400,12 +400,12 @@ var recettes = [
         temps: 20,
         ingredients: [
             Ingredient(nom: "pate - thai", quantite: "250", unite: "g", suppression: false),
-            Ingredient(nom: "carotte", quantite: "2", unite: " ", suppression: false),
+            Ingredient(nom: "carotte", quantite: "2", unite: "", suppression: false),
             Ingredient(nom: "poulet", quantite: "250", unite: "g", suppression: false),
-            Ingredient(nom: "oeufs", quantite: "2", unite: " ", suppression: false),
+            Ingredient(nom: "oeufs", quantite: "2", unite: "", suppression: false),
             Ingredient(nom: "huile de tournesol", quantite: "2", unite: "cs", suppression: false),
-            Ingredient(nom: "soja frais", quantite: " ", unite: " ", suppression: false),
-            Ingredient(nom: "feuile d'ail", quantite: " ", unite: " ", suppression: false),
+            Ingredient(nom: "soja frais", quantite: "", unite: "", suppression: false),
+            Ingredient(nom: "feuile d'ail", quantite: "", unite: "", suppression: false),
             Ingredient(nom: "sauce thai", quantite: "1", unite: "cs", suppression: false),
         ],
         
@@ -442,15 +442,15 @@ var recettes = [
         temps: 65,
         ingredients: [
             Ingredient(nom: "carottes", quantite: "2", unite: "", suppression: false),
-            Ingredient(nom: "navets", quantite: "1", unite: " ", suppression: false),
-            Ingredient(nom: "courgette", quantite: "2", unite: " ", suppression: false),
+            Ingredient(nom: "navets", quantite: "1", unite: "", suppression: false),
+            Ingredient(nom: "courgette", quantite: "2", unite: "", suppression: false),
             Ingredient(nom: "pois chiches", quantite: "100", unite: "g", suppression: false),
-            Ingredient(nom: "tomates", quantite: "4", unite: " ", suppression: false),
+            Ingredient(nom: "tomates", quantite: "4", unite: "", suppression: false),
             Ingredient(nom: "tomates concentré", quantite: "1", unite: "cs", suppression: false),
             Ingredient(nom: "harissa", quantite: "1 a 2", unite: "cc", suppression: false),
             Ingredient(nom: "épices a couscous", quantite: "2 ", unite: "cc", suppression: false),
             Ingredient(nom: "semoule fine", quantite: "350", unite: "g", suppression: false),
-            Ingredient(nom: "eau", quantite: "1", unite: "l", suppression: false),
+            Ingredient(nom: "eau", quantite: "1", unite: "L", suppression: false),
             Ingredient(nom: "huil d'olive", quantite: "2 a 3", unite: "cs", suppression: false),
             Ingredient(nom: "cubes de bouillon de boeufs", quantite: "3", unite: "", suppression: false),
             Ingredient(nom: "pilons de poulet", quantite: "6", unite: "", suppression: false),
@@ -495,12 +495,12 @@ var recettes = [
         difficulte: .facile,
         temps: 45,
         ingredients: [
-            Ingredient(nom: "lait", quantite: "l", unite: "l", suppression: false),
+            Ingredient(nom: "lait", quantite: "1", unite: "L", suppression: false),
             Ingredient(nom: "sucre", quantite: "250", unite: "g", suppression: false),
             Ingredient(nom: "maizéna", quantite: "250", unite: "g", suppression: false),
-            Ingredient(nom: "pattes feuilleté", quantite: "2", unite: " ", suppression: false),
-            Ingredient(nom: "oeufs", quantite: "6", unite: " ", suppression: false),
-            Ingredient(nom: "citron", quantite: "1", unite: "zeste ", suppression: false),
+            Ingredient(nom: "pattes feuilleté", quantite: "2", unite: "", suppression: false),
+            Ingredient(nom: "oeufs", quantite: "6", unite: "", suppression: false),
+            Ingredient(nom: "citron", quantite: "1", unite: "zeste", suppression: false),
         ],
         
         instructions: """

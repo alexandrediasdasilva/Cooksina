@@ -60,67 +60,61 @@ struct RecetteDetails: View {
                 Divider()
                 
                 
-                NavigationLink(destination: ProfilView()) {
+                VStack() {
                     
-                    HStack(alignment: .top, spacing: 20) {
+                    if let utilisateur = recetteChoisie.createur() {
                         
-                        if let utilisateur = recetteChoisie.createur() {
-                            
-                            
-                            InfosAuteur(utilisateur: utilisateur)
-                            
-                            
-                        } else {
-                            Text(recetteChoisie.auteur)
-                        }
-                                                
-                        VStack(alignment: .leading) {
-
-                            
-                            
-                            Text("“\(recetteChoisie.description)”")
-                                .font(.subheadline)
-                                .fontWeight(.light)
-                                .italic()
-                            
-                            Spacer()
-                            
-                            ZStack {
-                                
-                                RoundedRectangle(cornerRadius: 10)
-                                    .fill(Color("AccentColor"))
-                                
-                                
-                                HStack(spacing: 5) {
-                                    
-                                    Image(systemName: "message")
-                                    
-                                    Text("Contacter")
-                                        .font(.subheadline)
-                                        .fontWeight(.semibold)
-                                        .padding(8)
-                                } .foregroundColor(Color.white)
-                                
-                               
-                                
-                            }.frame(width: 130, height: 30)
+                        
+                        InfosAuteur(utilisateur: utilisateur)
                             .padding(.bottom)
-                     
-                            
-                            
-                           
-                                
-                          
-                                
-                                
-                                    
-                            
-                            
-                            
-                        } .frame(width: 250, height: 100, alignment: .topLeading)
                         
-                    } .foregroundColor(.black) .padding()
-                }
+                        
+                    } else {
+                        Text(recetteChoisie.auteur)
+                    }
+                    
+                    
+                    
+                    Text("Notes de l‘auteur".uppercased())
+                        .font(.caption2)
+                        .fontWeight(.semibold)
+                        .foregroundColor(Color.gray)
+                    
+                    Text("“\(recetteChoisie.description)”")
+                        .font(.subheadline)
+                        .fontWeight(.light)
+                        .italic()
+                        .padding(.bottom)
+                    
+                    
+                    
+                    
+                    ZStack {
+                        
+                        RoundedRectangle(cornerRadius: 8)
+                            .fill(Color("AccentColor"))
+                        
+                        
+                        HStack(spacing: 5) {
+                            
+                            Image(systemName: "message.fill")
+                            
+                            Text("Contacter")
+                                .font(.subheadline)
+                                .fontWeight(.bold)
+                            
+                        } .padding(10) .foregroundColor(Color.white)
+                        
+                        
+                        
+                    }.frame(width: 130, height: 45)
+                    .padding(.bottom)
+                    
+                    
+                } .padding()
+                
+                
+                
                 
                 Divider()
                 
@@ -138,14 +132,37 @@ struct RecetteDetails: View {
                     .padding()
                     
                     if pickerElementSelectionne == "Ingrédients" {
-//                        Text("\(recetteChoisie.ingredients)")
                         
                         ForEach (recetteChoisie.ingredients) { ingredient in
                             
                             HStack {
-                                Text("- ")
-                                Text("\(ingredient.quantite) \(ingredient.unite) \(ingredient.nom)")
+                                
+//                                Text("\(ingredient.quantite) \(ingredient.unite) \(ingredient.nom)")
+                                
+                                if ingredient.unite != "" {
+                                    Text("\(ingredient.quantite) \(ingredient.unite) \(ingredient.nom)")
+                                } else {
+                                    Text("\(ingredient.quantite) \(ingredient.nom)")
+                                }
+
+
+//                                VStack(alignment: .leading) {
+//
+//                                } .frame(width: 100)
+//
+//                                Spacer()
+//
+//
+//                                VStack {
+//
+//
+//                                }
+                                
+                                
+                                
+                                
                             } .padding(.horizontal)
+                            .padding(.vertical, 3)
                         }
                         
                     } else if pickerElementSelectionne == "Ustensiles" {
@@ -158,18 +175,19 @@ struct RecetteDetails: View {
                     
                     VStack(alignment: .leading) {
                         Text("Préparation".uppercased())
-                                .font(.headline)
-                                .fontWeight(.semibold)
+                            .font(.headline)
+                            .fontWeight(.bold)
+                            .foregroundColor(Color.gray)
                             .padding()
                         
                         Text(recetteChoisie.instructions)
-                            .padding()
+                            .padding(.horizontal)
                     }
-                        
-                   
                     
                     
-                }
+                    
+                    
+                } .padding(.horizontal)
                 
             } .navigationBarTitle("\(recetteChoisie.titre)", displayMode: .inline)
         }
@@ -212,30 +230,6 @@ struct StatsRecette: View {
     }
 }
 
-struct matériel: View {
-    var body: some View {
-        
-        
-        
-        HStack{
-            Image("batteur")
-                .resizable()
-                .scaledToFit()
-                .frame(width: 80, height: 80, alignment:
-                        .leading)
-            Image("fouet")
-                .resizable()
-                .scaledToFit()
-                .frame(width: 60, height: 60, alignment:
-                        .center)
-            Image("poele")
-                .resizable()
-                .scaledToFit()
-                .frame(width: 80, height: 80, alignment:
-                        .leading)        }
-    }
-}
-
 struct InfosAuteur: View {
     
     let utilisateur: Utilisateur
@@ -243,15 +237,21 @@ struct InfosAuteur: View {
     var body: some View {
         VStack {
             
-            Text(utilisateur.nom)
-                .font(.headline)
-                .padding(.bottom, 1)
-            
             Image(utilisateur.photo)
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .frame(width: 80, height: 80)
                 .clipShape(Circle())
+            
+            Text("proposée par".uppercased())
+                .font(.caption2)
+                .fontWeight(.semibold)
+                .foregroundColor(Color.gray)
+            
+            Text(utilisateur.nom)
+                .font(.headline)
+                .padding(.bottom, 1)
+            
         }
     }
 }

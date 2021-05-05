@@ -52,12 +52,13 @@ struct RecetteEdit: View {
             
             VStack(spacing: 10) {
                 
-                VStack {
+//                VStack {
   
                     imageView(for: viewModel.selectedImage)
-                    controlBar()
-                    Divider()
-                }
+//                    controlBar()
+//                    Divider()
+//
+//                }
                 
                 .fullScreenCover(isPresented: $viewModel.isPresentingImagePicker, content: {
                     ImagePicker(sourceType: viewModel.sourceType, completionHandler: viewModel.didSelectImage)
@@ -314,7 +315,7 @@ struct RecetteEdit: View {
                 
                 
             }
-        } .navigationBarTitle("Nouvelle recette")
+        } .navigationBarTitle("Nouvelle recette", displayMode: .inline)
     }
     
     @ViewBuilder
@@ -326,19 +327,17 @@ struct RecetteEdit: View {
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .frame(maxWidth: .infinity, maxHeight: 300)
-                .border(Color("AccentColor"), width: /*@START_MENU_TOKEN@*/1/*@END_MENU_TOKEN@*/)
-            
+                
+
         }
         
         else {
-            Text("Votre image ici")
-//            Image("soupe de butternut")
-//                .resizable()
-//                .aspectRatio(contentMode: .fill)
+//            Text("Votre image ici")
+            controlBar()
                 .frame(maxWidth: .infinity, maxHeight: 300)
-                .border(Color("AccentColor"))
-                
-                .padding()
+                .background(Color(#colorLiteral(red: 0.9220203161, green: 0.9220203161, blue: 0.9220203161, alpha: 1)))
+//                .border(Color("AccentColor"))
+//                .padding()
 //                .clipShape(Rectangle())
         }
         

@@ -102,8 +102,9 @@ struct ProfilView: View {
             } .navigationTitle("Profil")
             .navigationBarItems(
                 trailing:
-                    NavigationLink(destination: RecetteEdit()) {
-                        Text("Modifier profil")
+                    NavigationLink(destination: ProfilView()) {
+                        Text("Modifier")
+                            .fontWeight(.regular)
                     }
             )
         }

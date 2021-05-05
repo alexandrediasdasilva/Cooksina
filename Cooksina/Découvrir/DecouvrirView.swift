@@ -40,6 +40,7 @@ struct RegionsView: View {
                         NavigationLink(destination: RecetteEdit()) {
                             Image(systemName: "plus")
                                 .font(.title2)
+                                
                         }
                 )
                 
