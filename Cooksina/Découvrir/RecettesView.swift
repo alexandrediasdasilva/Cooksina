@@ -196,7 +196,7 @@ struct RecetteListRow: View {
                         Image(systemName: "suit.heart.fill")
                         Text("999")
                     } .font(.caption)
-                    .foregroundColor(Color.red)
+                    .foregroundColor(Color("AccentColor"))
                     .padding(.top, 1.0)
                     
                     

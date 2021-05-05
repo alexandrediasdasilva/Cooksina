@@ -36,31 +36,10 @@ struct RegionsView: View {
                 .navigationTitle("Découvrir")
                 
                 .navigationBarItems(
-                    //                    leading:
-                    //
-                    //                        Image("cooksina-lettering")
-                    //                        .resizable()
-                    //                        .scaledToFit()
-                    //                        .frame(height: 35),
-                    
-                    //                        NavigationLink(destination: RecetteDetails(recetteChoisie: randomRecette)
-                    //                        ) {
-                    //                            Button(action: {RandomRecette()}) {
-                    //                                Text("Surprenez-moi")
-                    //                                    .fontWeight(.regular)
-                    //                            }
-                    //                        }
-                    //
-                    //
-                    //                    Button(action: {}) {
-                    //                        Text("Surprenez-moi")
-                    //                            .fontWeight(.regular)
-                    //                    }
-                    //                    ,
                     trailing:
                         NavigationLink(destination: RecetteEdit()) {
                             Image(systemName: "plus")
-                                .frame(width: 50, height: 50)
+                                .font(.title2)
                         }
                 )
                 
@@ -86,6 +65,7 @@ struct Grid: View {
             NavigationLink(destination: ToutesLesRecettes()) {
                 HStack(spacing: 3) {
                     Text("Toutes nos recettes".uppercased())
+                        .foregroundColor(Color("AccentColor"))
                         .fontWeight(.bold)
                     Image(systemName: "chevron.forward")
                 } .font(.caption)
@@ -114,7 +94,7 @@ struct Grid: View {
                                 .shadow(radius: 5)
                             
                             Text(region.rawValue)
-                                .font(.caption2)
+                                .font(.caption)
                                 .fontWeight(.medium)
                                 .foregroundColor(Color.black)
                                 .padding(.top, 4)

@@ -68,33 +68,23 @@ struct ProfilView: View {
                     
                     HStack {
                         
-                            Text("Modifier profil")
-                                .font(.subheadline)
-                                .fontWeight(.semibold)
-                                .foregroundColor(Color.black)
-                                .frame(minWidth: 0, maxWidth: .infinity)
-                                .padding(8)
-                                .overlay(
-                                    RoundedRectangle(cornerRadius: 10)
-                                        .stroke(Color.gray, lineWidth: 1))
-                        
-                        NavigationLink(destination: RecetteEdit()) {
-                            Text("Nouvelle recette")
-                                .font(.subheadline)
-                                .fontWeight(.semibold)
-                                .foregroundColor(Color.black)
-                                .frame(minWidth: 0, maxWidth: .infinity)
-                                .padding(8)
-                                .overlay(
-                                    RoundedRectangle(cornerRadius: 10)
-                                        .stroke(Color.gray, lineWidth: 1))
-                        }
+//                        NavigationLink(destination: RecetteEdit()) {
+//                            Text("Nouvelle recette")
+//                                .font(.subheadline)
+//                                .fontWeight(.semibold)
+//                                .foregroundColor(Color.black)
+//                                .frame(minWidth: 0, maxWidth: .infinity)
+//                                .padding(8)
+//                                .overlay(
+//                                    RoundedRectangle(cornerRadius: 10)
+//                                        .stroke(Color.gray, lineWidth: 1))
+//                        }
                     }
                     
                     Spacer()
                     
                     VStack(alignment: .leading) {
-                        Text("Recettes")
+                        Text("Mes recettes")
                             .font(.title)
                             .fontWeight(.bold)
                         
@@ -110,6 +100,12 @@ struct ProfilView: View {
                     
                 } .padding()
             } .navigationTitle("Profil")
+            .navigationBarItems(
+                trailing:
+                    NavigationLink(destination: RecetteEdit()) {
+                        Text("Modifier profil")
+                    }
+            )
         }
     }
 }

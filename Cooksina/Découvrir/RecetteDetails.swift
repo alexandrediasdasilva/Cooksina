@@ -23,8 +23,8 @@ struct RecetteDetails: View {
                     Image(recetteChoisie.image)
                         .resizable()
                         .aspectRatio(contentMode: /*@START_MENU_TOKEN@*/.fill/*@END_MENU_TOKEN@*/)
-                        .frame(height: 350)
-                        .clipShape(Rectangle())
+                        .frame(width: 390, height: 350)
+                        .clipped()
                     
                     Rectangle()
                         .fill(LinearGradient(gradient: Gradient(colors: [.black, .clear]), startPoint: .bottom, endPoint: .top))
@@ -52,7 +52,7 @@ struct RecetteDetails: View {
                         Image(systemName: "suit.heart.fill")
                         Text("999")
                     } .font(.caption)
-                    .foregroundColor(Color.red)
+                    .foregroundColor(Color("AccentColor"))
                     
                     
                 } .padding(5)
@@ -75,6 +75,7 @@ struct RecetteDetails: View {
                         }
                                                 
                         VStack(alignment: .leading) {
+
                             
                             
                             Text("“\(recetteChoisie.description)”")
@@ -82,7 +83,41 @@ struct RecetteDetails: View {
                                 .fontWeight(.light)
                                 .italic()
                             
-                        } .frame(width: 250, alignment: .topLeading)
+                            Spacer()
+                            
+                            ZStack {
+                                
+                                RoundedRectangle(cornerRadius: 10)
+                                    .fill(Color("AccentColor"))
+                                
+                                
+                                HStack(spacing: 5) {
+                                    
+                                    Image(systemName: "message")
+                                    
+                                    Text("Contacter")
+                                        .font(.subheadline)
+                                        .fontWeight(.semibold)
+                                        .padding(8)
+                                } .foregroundColor(Color.white)
+                                
+                               
+                                
+                            }.frame(width: 130, height: 30)
+                            .padding(.bottom)
+                     
+                            
+                            
+                           
+                                
+                          
+                                
+                                
+                                    
+                            
+                            
+                            
+                        } .frame(width: 250, height: 100, alignment: .topLeading)
                         
                     } .foregroundColor(.black) .padding()
                 }
@@ -93,7 +128,7 @@ struct RecetteDetails: View {
                 
                 Divider()
                 
-                VStack {
+                VStack(alignment: .leading) {
                     
                     Picker(selection: $pickerElementSelectionne, label: Text("")) {
                         Text("Ingrédients").tag("Ingrédients")
@@ -110,11 +145,12 @@ struct RecetteDetails: View {
                             HStack {
                                 Text("- ")
                                 Text("\(ingredient.quantite) \(ingredient.unite) \(ingredient.nom)")
-                            }
+                            } .padding(.horizontal)
                         }
                         
                     } else if pickerElementSelectionne == "Ustensiles" {
-                        Text("Remplacer par liste des ustensiles dynamique")
+                        Text(recetteChoisie.ustensiles)
+                            .padding(.horizontal)
                     }
                     
                     Divider()
@@ -206,15 +242,16 @@ struct InfosAuteur: View {
     
     var body: some View {
         VStack {
+            
+            Text(utilisateur.nom)
+                .font(.headline)
+                .padding(.bottom, 1)
+            
             Image(utilisateur.photo)
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .frame(width: 80, height: 80)
                 .clipShape(Circle())
-            
-            Text(utilisateur.nom)
-                .font(.headline)
-                .padding(.bottom, 1)
         }
     }
 }
@@ -222,6 +259,6 @@ struct InfosAuteur: View {
 struct RecetteDetails_Previews: PreviewProvider {
     
     static var previews: some View {
-        RecetteDetails(recetteChoisie: recettes[0])
+        RecetteDetails(recetteChoisie: recettes[11])
     }
 }

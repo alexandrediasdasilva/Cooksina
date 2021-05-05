@@ -1,6 +1,6 @@
 var recettes = [
     Recette(
-        titre: "Le Poulet curry aux oignons",
+        titre: "Poulet curry aux oignons",
         description: "Spécialité indienne assaisonnée au paprika et au curry",
         image: "poulet-curry",
         auteur: "Jane Doe",
@@ -10,9 +10,11 @@ var recettes = [
         difficulte: .facile,
         temps: 20,
         ingredients: [
-            Ingredient(nom: "farine", quantite: "1", unite: "kg", suppression: false),
-            Ingredient(nom: "eau", quantite: "1", unite: "L", suppression: false),
-            Ingredient(nom: "citrouilles", quantite: "3", unite: "", suppression: false)
+            Ingredient(nom: "oignon", quantite: "1", unite: "", suppression: false),
+            Ingredient(nom: "blanc de poulet", quantite: "500", unite: "gr", suppression: false),
+            Ingredient(nom: "créme fraiche", quantite: "300", unite: "g", suppression: false),
+            Ingredient(nom: "cumain", quantite: "2", unite: "cc", suppression: false),
+            Ingredient(nom: "curry", quantite: "2", unite: "cc", suppression: false),
         ],
         instructions: """
         ÉTAPE 1
@@ -44,7 +46,7 @@ var recettes = [
         ustensiles: "Poêle, couteau, cuillère, planche à découper"),
     
     Recette(
-        titre: "Le fameux Ragoût au bœuf",
+        titre: "Ragoût de bœuf",
         description: "Spécialité indienne assaisonnée au paprika et au curry",
         image: "ragout-boeuf",
         auteur: "Jane Doe",
@@ -55,9 +57,17 @@ var recettes = [
         temps: 135,
         ingredients: [
             Ingredient(nom: "bœuf", quantite: "500", unite: "g", suppression: false),
-            Ingredient(nom: "sauce tomate", quantite: "200", unite: "mL", suppression: false),
-            Ingredient(nom: "oignons", quantite: "3", unite: "", suppression: false)
+            Ingredient(nom: "ail", quantite: "4", unite: "gousses", suppression: false),
+            Ingredient(nom: "tomates concentré", quantite: "1", unite: "cs", suppression: false),
+            Ingredient(nom: "beurre", quantite: "100", unite: "g", suppression: false),
+            Ingredient(nom: "citron", quantite: "1", unite: "jus", suppression: false),
+            Ingredient(nom: "paprika", quantite: "1", unite: "cc", suppression: false),
+            Ingredient(nom: "curry", quantite: "1", unite: "cc", suppression: false),
+            Ingredient(nom: "vin-rouge", quantite: "1", unite: "verre", suppression: false),
+            Ingredient(nom: "lait de coco", quantite: "1/5", unite: "l", suppression: false),
+            Ingredient(nom: "riz", quantite: "250", unite: "g", suppression: false)
         ],
+        
         instructions: """
         ÉTAPE 1
         Mélangez les gousses d'ail ecrasées, le vin, le jus de citron, la moitié du curry et le concentré de tomates.
@@ -84,9 +94,9 @@ var recettes = [
         Servir avec du riz parfumé.
         """,
         ustensiles: "Poêle, couteau, cuillère, planche à découper, cocotte"),
-    
+
     Recette(
-        titre: "La Soupe à la citrouille",
+        titre: "Soupe à la citrouille",
         description: "Spécialité indienne assaisonnée au paprika et au curry",
         image: "soupe de butternut",
         auteur: "Jane Doe",
@@ -95,6 +105,11 @@ var recettes = [
         nbPersonnes: 4,
         difficulte: .facile,
         temps: 20,
+               ingredients: [
+            Ingredient(nom: "curry", quantite: "1", unite: "cc", suppression: false),
+            Ingredient(nom: "crème entière", quantite: "50", unite: "cl", suppression: false),
+            Ingredient(nom: "citrouilles", quantite: "250", unite: "g", suppression: false)
+        ],
         instructions: """
         ÉTAPE 1
         Faire cuire le potiron à la casserole, ajouter les pommes de terre s'il y a trop d'eau.
@@ -105,7 +120,7 @@ var recettes = [
         ustensiles: "Poêle, couteau, cuillère, planche à découper, mixeur, cocotte"),
     
     Recette(
-        titre: "Le Butter Chicken",
+        titre: "Butter chicken",
         description: "Spécialité indienne au poulet assaisonné au graham de Masala",
         image: "butter-chicken",
         auteur: "Jane Doe",
@@ -114,6 +129,12 @@ var recettes = [
         nbPersonnes: 6,
         difficulte: .facile,
         temps: 40,
+        ingredients: [
+            Ingredient(nom: "poulet", quantite: "750", unite: "g", suppression: false),
+            Ingredient(nom: "ghee", quantite: "150", unite: "g", suppression: false),
+            Ingredient(nom: "oignons", quantite: "2", unite: "", suppression: false),    Ingredient(nom: "cannelle, cumin, massala", quantite: "1", unite: "càc", suppression: false),
+            Ingredient(nom: "yoghourt", quantite: "1", unite: "pot", suppression: false)
+        ],
         instructions: """
         ÉTAPE 1
         Préparer la marinade : mélanger 1 pot de yoghourt avec les massalas (tandoori et garam), cannelle, clous de girofle et cumin. Saler.
@@ -151,7 +172,7 @@ var recettes = [
         ustensiles: "Poêle, couteau, cuillère, planche à découper, mixeur, pinceau, Cocotte"),
     
     Recette(
-        titre: "Le Mafé",
+        titre: "Mafé",
         description: "Spécialité africaine",
         image: "mafe",
         auteur: "Jane Doe",
@@ -160,6 +181,12 @@ var recettes = [
         nbPersonnes: 4,
         difficulte: .facile,
         temps: 75,
+         ingredients: [
+            Ingredient(nom: "poulet", quantite: "500", unite: "g", suppression: false),
+            Ingredient(nom: "netatou poudre", quantite: "3", unite: "càc", suppression: false),
+            Ingredient(nom: "boîte sauce tomate", quantite: "200", unite: "g", suppression: false),    Ingredient(nom: "huile d'arachide", quantite: "4", unite: "càs", suppression: false),
+            Ingredient(nom: "patates douces ", quantite: "2", unite: "", suppression: false)
+        ],
         instructions: """
         ÉTAPE 1
         Faire revenir le poulet dans l'huile d'arachide bien chaude.
@@ -191,7 +218,7 @@ var recettes = [
         ustensiles: "Poêle, couteau, cuillère, planche à découper"),
     
     Recette(
-        titre: "Le Tzatziki",
+        titre: "Tzatziki",
         description: "Spécialité grecque au concombre",
         image: "tzatziki",
         auteur: "Jane Doe",
@@ -200,6 +227,12 @@ var recettes = [
         nbPersonnes: 4,
         difficulte: .facile,
         temps: 15,
+        ingredients: [
+            Ingredient(nom: "concombre", quantite: "1", unite: "", suppression: false),
+            Ingredient(nom: "menthe", quantite: "1", unite: "bouquet", suppression: false), Ingredient(nom: "yoghort grec", quantite: "1", unite: "pot", suppression: false),
+            Ingredient(nom: "huile d'oilive", quantite: "4", unite: "càs", suppression: false),
+            Ingredient(nom: "ail", quantite: "1", unite: "gousse", suppression: false)
+        ],
         instructions: """
         ÉTAPE 1
         Éplucher et râper le concombre, puis le mettre à égoutter dans une passoire (l'astuce est de saler le concombre pour le faire dégorger plus vite).
@@ -222,7 +255,7 @@ var recettes = [
         ustensiles: "couteau, cuillère, planche à découper"),
     
     Recette(
-        titre: "Les Spaghettis bolognaise",
+        titre: "Spaghettis bolognaise",
         description: "Spécialité italienne",
         image: "bolognese",
         auteur: "Jane Doe",
@@ -231,6 +264,14 @@ var recettes = [
         nbPersonnes: 8,
         difficulte: .facile,
         temps: 50,
+        ingredients: [
+            Ingredient(nom: "huile d'olive", quantite: "5", unite: "càs", suppression: false),
+            Ingredient(nom: "oignons", quantite: "3", unite: "", suppression: false),
+            Ingredient(nom: "boîte sauce tomate", quantite: "200", unite: "g", suppression: false),
+            Ingredient(nom: "vin", quantite: "50", unite: "cl", suppression: false),
+            Ingredient(nom: "boeuf haché", quantite: "400", unite: "g", suppression: false),
+            Ingredient(nom: "champignons", quantite: "100", unite: "g", suppression: false)
+        ],
         instructions: """
         ÉTAPE 1
         La cuisson se fait dans une sauteuse. Faire revenir dans de l'huile d'olive chaude l'oignon et les 2 gousses d'ail grossièrement hachés, à petit feu pour ne pas qu'ils brûlent. Mélanger souvent.
@@ -261,8 +302,9 @@ var recettes = [
         """,
         ustensiles: "Poêle, couteau, cuillère, planche à découper, Casserole"),
     
+
     Recette(
-        titre: "Le Houmous",
+        titre: "Houmous",
         description: "Spécialité libanaise du proche-Orient composé de pois-chiche",
         image: "houmous",
         auteur: "Jane Doe",
@@ -271,6 +313,20 @@ var recettes = [
         nbPersonnes: 7,
         difficulte: .facile,
         temps: 150,
+        ingredients: [
+            Ingredient(nom: "pois chiches", quantite: "500", unite: "g", suppression: false),
+            Ingredient(nom: "eau", quantite: "2", unite: "L", suppression: false),
+            Ingredient(nom: "laurier", quantite: "5", unite: "feuille", suppression: false),
+            Ingredient(nom: "ail", quantite: "1", unite: "gousse", suppression: false),
+            Ingredient(nom: "citron", quantite: "2", unite: " ", suppression: false),
+            Ingredient(nom: "olives", quantite: "5", unite: " ", suppression: false),
+            Ingredient(nom: "huile", quantite: "1O", unite: "cl", suppression: false),
+            Ingredient(nom: "sel", quantite: "1", unite: "cc", suppression: false),
+            Ingredient(nom: "poivre", quantite: "1", unite: "cc", suppression: false),
+            Ingredient(nom: "piment", quantite: "1", unite: "pincée", suppression: false),
+            Ingredient(nom: "pain libanais", quantite: "", unite: " ", suppression: false),
+        ],
+        
         instructions: """
         ÉTAPE 1
         La veille, mettre à tremper les pois chiches dans de l'eau froide.
@@ -311,6 +367,15 @@ var recettes = [
         nbPersonnes: 4,
         difficulte: .facile,
         temps: 10,
+        ingredients: [
+            Ingredient(nom: "oignone", quantite: "1", unite: " ", suppression: false),
+            Ingredient(nom: "coriande", quantite: "200", unite: "g", suppression: false),
+            Ingredient(nom: "avocat", quantite: "1", unite: " ", suppression: false),
+            Ingredient(nom: "citron", quantite: "1", unite: " ", suppression: false),
+            Ingredient(nom: "sel", quantite: " ", unite: "cc", suppression: false),
+            Ingredient(nom: "poivre", quantite: " ", unite: " ", suppression: false),
+        ],
+        
         instructions: """
         ÉTAPE 1
         Emincer l'oignon frais et les feuilles de coriandre.
@@ -324,7 +389,7 @@ var recettes = [
         ustensiles: "couteau, cuillère, planche à découper"),
     
     Recette(
-        titre: "Le Pad Thaï",
+        titre: "Pad thaï",
         description: "Plat traditionnel thaïlandais à base de nouilles de riz",
         image: "PadThai",
         auteur: "Jane Doe",
@@ -333,6 +398,17 @@ var recettes = [
         nbPersonnes: 2,
         difficulte: .facile,
         temps: 20,
+        ingredients: [
+            Ingredient(nom: "pate - thai", quantite: "250", unite: "g", suppression: false),
+            Ingredient(nom: "carotte", quantite: "2", unite: " ", suppression: false),
+            Ingredient(nom: "poulet", quantite: "250", unite: "g", suppression: false),
+            Ingredient(nom: "oeufs", quantite: "2", unite: " ", suppression: false),
+            Ingredient(nom: "huile de tournesol", quantite: "2", unite: "cs", suppression: false),
+            Ingredient(nom: "soja frais", quantite: " ", unite: " ", suppression: false),
+            Ingredient(nom: "feuile d'ail", quantite: " ", unite: " ", suppression: false),
+            Ingredient(nom: "sauce thai", quantite: "1", unite: "cs", suppression: false),
+        ],
+        
         instructions: """
         ÉTAPE 1
         Disposez les pâtes, les carottes et le poulet dans de l’eau bouillante non salée et faites cuire le tout pendant 1 minute.
@@ -355,8 +431,8 @@ var recettes = [
         ustensiles: "Poêle, couteau, cuillère, planche à découper, Wok"),
     
     Recette(
-        titre: "Le Couscous poulet merguez",
-        description: "Plat berbère de seùmoule de blé accompagné de ses multiples légumes",
+        titre: "Couscous poulet merguez",
+        description: "Plat berbère de semoule de blé accompagné de ses multiples légumes",
         image: "Couscous",
         auteur: "Jane Doe",
         categories: ["Repas"],
@@ -364,6 +440,23 @@ var recettes = [
         nbPersonnes: 6,
         difficulte: .facile,
         temps: 65,
+        ingredients: [
+            Ingredient(nom: "carottes", quantite: "2", unite: "", suppression: false),
+            Ingredient(nom: "navets", quantite: "1", unite: " ", suppression: false),
+            Ingredient(nom: "courgette", quantite: "2", unite: " ", suppression: false),
+            Ingredient(nom: "pois chiches", quantite: "100", unite: "g", suppression: false),
+            Ingredient(nom: "tomates", quantite: "4", unite: " ", suppression: false),
+            Ingredient(nom: "tomates concentré", quantite: "1", unite: "cs", suppression: false),
+            Ingredient(nom: "harissa", quantite: "1 a 2", unite: "cc", suppression: false),
+            Ingredient(nom: "épices a couscous", quantite: "2 ", unite: "cc", suppression: false),
+            Ingredient(nom: "semoule fine", quantite: "350", unite: "g", suppression: false),
+            Ingredient(nom: "eau", quantite: "1", unite: "l", suppression: false),
+            Ingredient(nom: "huil d'olive", quantite: "2 a 3", unite: "cs", suppression: false),
+            Ingredient(nom: "cubes de bouillon de boeufs", quantite: "3", unite: "", suppression: false),
+            Ingredient(nom: "pilons de poulet", quantite: "6", unite: "", suppression: false),
+            Ingredient(nom: "merguez", quantite: "6", unite: "", suppression: false),
+        ],
+        
         instructions: """
         ÉTAPE 1
         Lavez et épluchez les carottes, les navets et les tomates et les couper en cubes.
@@ -392,7 +485,7 @@ var recettes = [
         ustensiles: "Poêle, couteau, cuillère, planche à découper, Cocotte minute, Cuiseur Vapeur"),
     
     Recette(
-        titre: "Les Pasteis de nata",
+        titre: "Pasteis de nata",
         description: "Patisserie à la crême provenant du Portugal",
         image: "pasteis",
         auteur: "Jane Doe",
@@ -401,6 +494,15 @@ var recettes = [
         nbPersonnes: 12,
         difficulte: .facile,
         temps: 45,
+        ingredients: [
+            Ingredient(nom: "lait", quantite: "l", unite: "l", suppression: false),
+            Ingredient(nom: "sucre", quantite: "250", unite: "g", suppression: false),
+            Ingredient(nom: "maizéna", quantite: "250", unite: "g", suppression: false),
+            Ingredient(nom: "pattes feuilleté", quantite: "2", unite: " ", suppression: false),
+            Ingredient(nom: "oeufs", quantite: "6", unite: " ", suppression: false),
+            Ingredient(nom: "citron", quantite: "1", unite: "zeste ", suppression: false),
+        ],
+        
         instructions: """
         ÉTAPE 1
         Dans une casserole, mettre le lait, le sucre, la maïzéna, et l zeste de citron.
