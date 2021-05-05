@@ -11,13 +11,12 @@ struct ChatDiscussionView: View {
     let discussion:ChatList
     
     var body: some View {
-        VStack{
-            Divider()
+        VStack {
             Image(discussion.image)
                 .resizable()
                 .scaledToFill()
                 .aspectRatio(contentMode: .fill)
-                .frame(width: 100, height: 100)
+                .frame(width: 60, height: 60)
                 .clipShape(Circle())
         Text("\(discussion.name)")
             Divider()
@@ -42,7 +41,7 @@ enum BubblePosition {
 }
 
 class ChatModel: ObservableObject {
-    var text = "iMessage"
+    var text = "Message"
     @Published var arrayOfMessages : [String] = []
     @Published var arrayOfPositions : [BubblePosition] = []
     @Published var position = BubblePosition.right
@@ -210,38 +209,46 @@ struct Chat: View {
                 }.padding()*/
                 Divider()
                 
-                HStack(spacing : 20){
+                HStack(spacing : 30) {
+                    
                     HStack(spacing : 30){
                     Image("Raster-1").resizable().frame(width: 28.0, height: 22.0)
-                    Image("Raster-2").resizable().frame(width: 28.0, height: 24.0)
-                    Image("Raster-3").resizable().frame(width: 34.0, height: 25.0)
                 }
-                ZStack{
-                    RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
-                        .stroke(Color("iMessageBorder"), lineWidth: 1)
-                        .foregroundColor(Color("iMessageBG"))
-                        .frame(maxWidth: 180, maxHeight: 50)
-                    TextEditor(text: $model.text)
-                         .frame(maxWidth: 120.0, maxHeight: 35.0)
-                        .foregroundColor(iMessageColor)
-                         .padding(.trailing, 30.0)
-                         .onTapGesture {
-                            model.text = ""
-                            iMessageColor = Color(.black)
-                                    }
-                    Image("Raster").resizable().frame(width: 26.0, height: 26.0).padding(.leading, 115)
-                }
-                    Button("send") {
-                        if model.text != "" {
-                            model.position = model.position == BubblePosition.right ? BubblePosition.left : BubblePosition.right
-                            model.arrayOfPositions.append(model.position)
-                            model.arrayOfMessages.append(model.text)
-                            model.text = ""
+                    
+                    HStack(spacing: 10) {
+                        
+                        ZStack {
+                        
+                        RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
+                            .stroke(Color("iMessageBorder"), lineWidth: 1)
+                            .foregroundColor(Color("iMessageBG"))
+                            .frame(maxWidth: 300, maxHeight: 40)
+                        
+                        TextEditor(text: $model.text)
+                             .frame(maxWidth: 140.0, maxHeight: 35.0)
+                            .foregroundColor(iMessageColor)
+                             .padding(.trailing, 30.0)
+                             .onTapGesture {
+                                model.text = ""
+                                iMessageColor = Color(.black)
+                                        }
+                        
+                        }
+                        
+                        Button("Envoyer") {
+                            if model.text != "" {
+                                model.position = model.position == BubblePosition.right ? BubblePosition.left : BubblePosition.right
+                                model.arrayOfPositions.append(model.position)
+                                model.arrayOfMessages.append(model.text)
+                                model.text = ""
+                            }
                         }
                     }
-                }
+                    
+     
+                } .padding(.horizontal, 30)
                 
-                Divider()
+                
             }
         }
     }

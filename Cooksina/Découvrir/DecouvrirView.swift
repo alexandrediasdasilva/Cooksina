@@ -63,7 +63,7 @@ struct Grid: View {
             Text("Voyagez sans vous déplacer")
                 .foregroundColor(Color.gray)
             
-            NavigationLink(destination: ToutesLesRecettes()) {
+            NavigationLink(destination: ToutesLesRecettes(texteRecherche: "")) {
                 HStack(spacing: 3) {
                     Text("Toutes nos recettes".uppercased())
                         .foregroundColor(Color("AccentColor"))
@@ -161,9 +161,23 @@ struct SelectionRedac: View {
 }
 
 struct ToutesLesRecettes: View {
+    
+    @State var texteRecherche: String
+    @State var isSearching = false
+    @State private var showingSheet = false
+    
     var body: some View {
         
         ScrollView {
+            
+            VStack {
+                BarreDeRecherche(
+                    texteRecherche: $texteRecherche,
+                    isSearching: $isSearching,
+                    showingSheet: $showingSheet
+                )
+            }
+            
             VStack {
                 ForEach(recettes) { recette in
                     

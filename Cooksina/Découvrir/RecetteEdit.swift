@@ -18,12 +18,15 @@ struct RecetteEdit: View {
     
     @StateObject var viewModel = ViewModel()
     @State var recette=Recette(titre: "String", description: "ddzad", image: "String", auteur: "String", categories: ["String"], region: .afriqueDuNord, nbPersonnes: 3, difficulte: .difficile, temps: 30, ingredients: ingredients, instructions: "String", ustensiles: "String")
-    @State var note:String = "Écrivez les instructions de préparation de votre plat ici..."
+    @State var note: String = "Éplucher les légumes et les couper en petits morceaux."
+    @State var champUstensiles: String = "Cocotte, mixeur plongeant"
+    @State var champTitre: String = "Soupe"
+
     
     @State private var inputIngredient : String = ""
     @State private var quantities = ["0", "1", "2", "3"]
     @State private var unities = ["kg", "L", "unité"]
-    @State private var ustensiles = ["casserole", "poêle", "mélangeur", "gants"]
+    @State private var ustensiles = "Casserole, poêle, mélangeur, gants"
     @State private var selectedUnity = "kg"
     @State private var quantity = 1
     @State private var selectedQuantity = "1"
@@ -65,21 +68,33 @@ struct RecetteEdit: View {
                 })
                 
                 VStack {
+                    TextField("Nom de la recette", text: $champTitre)
+                    Divider()
+//                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                } .padding()
+                
+                VStack {
                     
                     VStack(alignment: .leading) {
                         
                         HStack {
-                            Text("Ingrédient")
+                            Text("Ingrédient".uppercased())
+                                .fontWeight(.semibold)
                                 .frame(maxWidth: .infinity, alignment: .leading)
-                            Text("Qté")
+                            
+                            Text("Qté".uppercased())
+                                .fontWeight(.semibold)
                                 .frame(width: 60, alignment: .leading)
-                            Text("Unité").frame(width: 70, alignment: .leading)
+                            
+                            Text("Unité".uppercased())
+                                .fontWeight(.semibold)
+                                .frame(width: 70, alignment: .leading)
+                            
                             Spacer()
                                 .frame(width:55)
                         }
-                        .font(.headline)
+                        .font(.subheadline)
                         .padding(.bottom, 3)
-                        
                         
                         ForEach(recette.ingredients)
                         {
@@ -105,7 +120,6 @@ struct RecetteEdit: View {
                             showingPopover = true
                         }, label: {
                             Text(selectedQuantity)
-                                .fontWeight(.semibold)
                                 .foregroundColor(Color.black)
                                 .padding(.horizontal, 20)
                                 .background(Color(#colorLiteral(red: 0.9220203161, green: 0.9220203161, blue: 0.9220203161, alpha: 1)))
@@ -115,7 +129,6 @@ struct RecetteEdit: View {
                         
                             
                             Text(selectedUnity)
-                                .fontWeight(.semibold)
                                 .foregroundColor(Color.black)
                                 .padding(.horizontal, 20)
                                 .background(Color(#colorLiteral(red: 0.9220203161, green: 0.9220203161, blue: 0.9220203161, alpha: 1)))
@@ -124,12 +137,12 @@ struct RecetteEdit: View {
                             
                         }).popover(isPresented: self.$showingPopover){ //, arrowEdge: .bottom
                             
-                            Text("\(selectedQuantity)")
-                            
-                            Text("\(selectedUnity)")
+//                            Text("\(selectedQuantity)")
+//
+//                            Text("\(selectedUnity)")
                             
                             HStack {
-                                Spacer()
+
                                 Picker("Quantity", selection: $quantity) {
                                     ForEach(0..<quantities.count) { index in
                                         Text("\(self.quantities[index])").tag(quantities[index])
@@ -139,6 +152,8 @@ struct RecetteEdit: View {
                                 .pickerStyle(WheelPickerStyle())
                                 .frame(width: 180)
                                 .clipped()
+                                
+//                                Spacer()
                                 
                                 Picker("Unity", selection: $selectedUnity) {
                                     ForEach(0..<unities.count) { index in
@@ -150,16 +165,17 @@ struct RecetteEdit: View {
                                 .frame(width: 180)
                                 .clipped()
                                 
-                                Spacer()
+//                                Spacer()
                             }
                             
-                            Button("Close") {
+                            Button("Fermer") {
                                 self.showingPopover = false
                                 selectedQuantity = "\(quantity)"
                             }
                         }// end popover
                         
                         Spacer()
+                            
                         
                         Button(action: {
                             addAction()
@@ -170,43 +186,17 @@ struct RecetteEdit: View {
                     }
                     .padding(.vertical)
                     
+                    Divider()
+                    
                     VStack(alignment: .leading, spacing: 10){
-                        HStack{
-                            Image(systemName: "tray")
-                                .font(.title3)
+                        
+                        HStack {
+//                            Image(systemName: "timer")
+//                                .font(.title3)
                             
-                            Button(action: {
-                                showingPopover4 = true
-                            }, label: {
-                                Text(selectedUstensile)
-                                    .multilineTextAlignment(.center)
-                                    .frame(maxWidth: .infinity)
-                            }).popover(isPresented: self.$showingPopover4){ //, arrowEdge: .bottom
-                                Text("\(selectedUstensile)")
-                                HStack {
-                                    Spacer()
-                                    
-                                    Picker("Ustensile", selection: $selectedUstensile) {
-                                        ForEach(0..<ustensiles.count) { index in
-                                            Text("\(self.ustensiles[index])").tag(ustensiles[index])
-                                        }
-                                    }
-                                    .labelsHidden()
-                                    .pickerStyle(WheelPickerStyle())
-                                    .frame(width: 180)
-                                    .clipped()
-                                    
-                                    Spacer()
-                                }
-                                
-                                Button("Close") {
-                                    self.showingPopover4 = false
-                                }
-                            }// end popover
-                        }
-                        HStack{
-                            Image(systemName: "timer")
-                                .font(.title3)
+                            Text("Temps de prép.".uppercased())
+                                .font(.subheadline)
+                                .fontWeight(.semibold).padding(.bottom, 5)
                             
                             Button(action: {
                                 showingPopover2 = true
@@ -215,7 +205,7 @@ struct RecetteEdit: View {
                                     .multilineTextAlignment(.center)
                                     .frame(maxWidth: .infinity)
                             }).popover(isPresented: self.$showingPopover2){ //, arrowEdge: .bottom
-                                Text("\(hours):\(minutes)")
+//                                Text("\(hours):\(minutes)")
                                 HStack {
                                     Spacer()
                                     
@@ -238,17 +228,20 @@ struct RecetteEdit: View {
                                     .clipped()
                                     
                                     Spacer()
-                                }
+                                } .padding()
                                 
-                                Button("Close") {
+                                Button("Fermer") {
                                     self.showingPopover2 = false
-                                    hoursAndMinutes = "\(hours)h:\(minutes)m"
+                                    hoursAndMinutes = "\(hours)h \(minutes)m"
                                 }
                             }// end popover
                         }
-                        HStack{
-                            Image(systemName: "person.3")
-                                .font(.title3)
+                        
+                        HStack {
+//                            Image(systemName: "person.3")
+                            Text("Nb de pers.".uppercased())
+                                .font(.subheadline)
+                                .fontWeight(.semibold)
                             
                             Button(action: {
                                 showingPopover3 = true
@@ -257,7 +250,7 @@ struct RecetteEdit: View {
                                     .multilineTextAlignment(.center)
                                     .frame(maxWidth: .infinity)
                             }).popover(isPresented: self.$showingPopover3){ //, arrowEdge: .bottom
-                                Text("\(guests)")
+//                                Text("\(guests)")
                                 HStack {
                                     Spacer()
                                     
@@ -273,49 +266,112 @@ struct RecetteEdit: View {
                                     Spacer()
                                 }
                                 
-                                Button("Close") {
+                                Button("Fermer") {
                                     self.showingPopover3 = false
                                     selectedGuests = "\(guests)"
                                 }
                             }// end popover
                         }
-                    } .padding(.leading, 10)
-                    
-                    Divider()
-                    
-                    Text("Instructions de préparation".uppercased())
-                        .bold()
-                    
-                    TextEditor(text: self.$note)
-                        .lineLimit(3)
-                        .frame(minHeight: 130.0)
+                        
+                        Divider()
+                        
+                        VStack {
+//                            Text("Ustensiles".uppercased())
+//                                .font(.subheadline)
+//                                .fontWeight(.semibold)
+                            
+           
+                            
+                                TextField("Ustensiles", text: $champUstensiles)
+//                                    .textFieldStyle(RoundedBorderTextFieldStyle())
+//                                    .border(Color(UIColor.separator))
+//                                    .padding(.horizontal, 5.0)
+                                    .onTapGesture {
+                                        if self.note == "Ecrire la description de préparation de votre plat ici ..." {
+                                            self.note = ""
+                                        }
+                                }
+                            Divider()
+                            
 
-                        .foregroundColor(.gray)
-                        .padding(.horizontal, 5.0)
+                            
+//                            Button(action: {
+//                                showingPopover4 = true
+//                            }, label: {
+//                                Text(selectedUstensile)
+//                                    .multilineTextAlignment(.center)
+//                                    .frame(maxWidth: .infinity)
+//                            }).popover(isPresented: self.$showingPopover4){ //, arrowEdge: .bottom
+//                                Text("\(selectedUstensile)")
+//
+//                                HStack {
+//                                    Spacer()
+//
+//                                    Picker("Ustensile", selection: $selectedUstensile) {
+//                                        ForEach(0..<ustensiles.count) { index in
+//                                            Text("\(self.ustensiles[index])").tag(ustensiles[index])
+//                                        }
+//                                    }
+//                                    .labelsHidden()
+//                                    .pickerStyle(WheelPickerStyle())
+//                                    .frame(width: 180)
+//                                    .clipped()
+//
+//                                    Spacer()
+//                                }
+//
+//                                Button("Fermer") {
+//                                    self.showingPopover4 = false
+//                                }
+//                            }// end popover
+                            
+                            
+                        } .padding(.vertical)
+                        
+                    } .padding(.vertical)
+                    
+
+//
+//                    Text("Instructions de préparation".uppercased())
+//                        .bold()
+//
+                    TextEditor(text: self.$note)
+                        .frame(minHeight: 130.0)
+//                        .cornerRadius(25)
+                        
+//                        .foregroundColor(.gray)
+//                        .overlay(
+//                                RoundedRectangle(cornerRadius: 2)
+//                                    .stroke(Color.gray, lineWidth: 1)
+//                            )
                         .onTapGesture {
                             if self.note == "Ecrire la description de préparation de votre plat ici ..." {
                                 self.note = ""
                             }
                         }
                     
+                    Divider()
+                    
                     Button(action: {
                         print("publier")
                     }, label: {
                         Text("Publier")
+                            .font(.body)
+                            .fontWeight(.semibold)
+                        
                     })
                     .frame(maxWidth: 130.0, minHeight: 40.0)
                     .background(Color("AccentColor"))
-                    .font(.system(size:20, weight: .bold))
                     .foregroundColor(.white)
                     .cornerRadius(3.0)
-                    .padding(.bottom)
+                    .padding()
                     
                 } .padding()
                 
                 
                 
             }
-        } .navigationBarTitle("Nouvelle recette", displayMode: .inline)
+        } .navigationBarTitle(champTitre, displayMode: .inline)
     }
     
     @ViewBuilder
@@ -332,9 +388,9 @@ struct RecetteEdit: View {
         }
         
         else {
-//            Text("Votre image ici")
+
             controlBar()
-                .frame(maxWidth: .infinity, maxHeight: 300)
+                .frame(height: 300)
                 .background(Color(#colorLiteral(red: 0.9220203161, green: 0.9220203161, blue: 0.9220203161, alpha: 1)))
 //                .border(Color("AccentColor"))
 //                .padding()
@@ -376,10 +432,13 @@ struct IngredientListRow: View {
                 .frame(width: 60, alignment: /*@START_MENU_TOKEN@*/.leading/*@END_MENU_TOKEN@*/)
             Text(myIngredient.unite)
                 .frame(width: 70, alignment: /*@START_MENU_TOKEN@*/.leading/*@END_MENU_TOKEN@*/)
+        
             Button(action: deleteAction, label: {
                 Image(systemName: "minus.circle")
                     .font(.title2)
             })
+            
+            
         } .padding(.bottom, 1)
     }
 }

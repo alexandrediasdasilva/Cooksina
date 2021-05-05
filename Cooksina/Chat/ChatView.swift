@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct ChatList: Identifiable {
-    
     var id = UUID()
     var name: String
     var image: String
@@ -19,54 +18,70 @@ struct ChatView: View {
     
     @State private var selection: UUID?
     @State private var discussions = [
-        ChatList(name: "Alex", image: "1", messagePreview: "Merci pour la recette :)"),
-        ChatList(name: "Sana", image: "2", messagePreview: "Coucou vous etes là ?"),
-        ChatList(name: "Hugo", image: "3", messagePreview: "Je viens de poster une..."),
-        ChatList(name: "Bodo", image: "4", messagePreview: "Que est ce que tu prépare..."),
-        ChatList(name: "Mondher", image: "5", messagePreview: "A plus tard ... :D"),
+        ChatList(name: "Alex", image: "1", messagePreview: "Merci pour la recette !"),
+        ChatList(name: "Sana", image: "2", messagePreview: "Coucou vous êtes là ?"),
+        ChatList(name: "Hugo", image: "3", messagePreview: "Je viens de poster une recette"),
+        ChatList(name: "Bodo", image: "4", messagePreview: "Qu'est-ce que tu prépares de bon ?"),
+        ChatList(name: "Mondher", image: "5", messagePreview: "À plus tard :)"),
     ]
     
     var body: some View {
         NavigationView {
-            VStack{
-                List(discussions) { discussion in
-                    NavigationLink(destination: ChatDiscussionView(discussion: discussion)) {
-                        ChatListRow(myChatList: discussion) //, selectedItem: $selection
-                    }
-                }
-            }.navigationTitle("Chat")
+            
+            ScrollView {
+                VStack {
+                    
+                        ForEach(discussions) { discussion in
+                            NavigationLink(destination: ChatDiscussionView(discussion: discussion)) {
+                                ChatListRow(myChatList: discussion)
+                            }
+                        }
+                    
+                    Spacer()
+             
+                } .navigationTitle("Chat")
+            }
         }
     }
 }
 
-struct ChatView_Previews: PreviewProvider {
-    static var previews: some View {
-        ChatView()
-    }
-}
+
 
 struct ChatListRow: View {
     
     let myChatList: ChatList
-    //@Binding var selectedItem: UUID?
     
     var body: some View {
-       /* Button(action: {
-            selectedItem = myChatList.id
-            //            dump(weather.id)
-        }, label: {
-            
-        })*/
-        HStack {
+
+        HStack(alignment: .top, spacing: 20.0) {
             Image(myChatList.image)
                 .resizable()
                 .scaledToFill()
                 .aspectRatio(contentMode: .fill)
-                .frame(width: 80, height: 80)
+                .frame(width: 60, height: 60)
                 .clipShape(Circle())
-            //.padding(0.0)
-            Text(myChatList.name)
-            Text(myChatList.messagePreview).frame(maxWidth: .infinity)
-        }
+            
+            VStack(alignment: .leading) {
+                Text(myChatList.name)
+                    .foregroundColor(.black)
+                    .fontWeight(.semibold)
+                
+                Text(myChatList.messagePreview)
+                    .foregroundColor(Color.gray)
+                    .padding(.bottom)
+                
+                Divider()
+                
+            }
+            Spacer()
+        } .padding(.horizontal) .padding(.vertical, 10)
+    }
+}
+
+
+
+struct ChatView_Previews: PreviewProvider {
+    static var previews: some View {
+        ChatView()
     }
 }

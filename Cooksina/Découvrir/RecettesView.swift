@@ -50,16 +50,15 @@ struct FiltresView: View {
     @State var isSelected = false
     @Environment(\.presentationMode) var presentationMode
     
+    init(){
+            UITableView.appearance().backgroundColor = .clear
+        }
+    
     var body: some View {
         NavigationView {
             VStack {
                 Form {
-                    //                    Picker(selection: $regionIndex, label: Text("Région")) {
-                    //                        Text("Région 1")
-                    //                        Text("Région 2")
-                    //                        Text("Région 3")
-                    //                        Text("Région 4")
-                    //                    }
+
                     
                     Section(header: Text("Catégories")) {
                         
@@ -79,6 +78,7 @@ struct FiltresView: View {
                     }
                     
                 } .navigationTitle("Filtres")
+                
                 HStack {
                     Button("Annuler") {
                         presentationMode.wrappedValue.dismiss()
@@ -90,7 +90,7 @@ struct FiltresView: View {
                     Button(action: {}) {
                         Text("Terminer")
                     } .padding()
-                    .background(Color.blue)
+                    .background(Color("AccentColor"))
                     .foregroundColor(.white)
                     .cornerRadius(2)
                 }
@@ -242,8 +242,8 @@ struct RecettesView_Previews: PreviewProvider {
     }
 }
 
-//struct Filtres_Previews: PreviewProvider {
-//    static var previews: some View {
-//        FiltresView()
-//    }
-//}
+struct Filtres_Previews: PreviewProvider {
+    static var previews: some View {
+        FiltresView()
+    }
+}

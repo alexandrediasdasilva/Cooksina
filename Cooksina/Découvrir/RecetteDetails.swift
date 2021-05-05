@@ -107,7 +107,7 @@ struct RecetteDetails: View {
                         
                         
                         
-                    }.frame(width: 130, height: 45)
+                    }.frame(width: 130, height: 40)
                     .padding(.bottom)
                     
                     
