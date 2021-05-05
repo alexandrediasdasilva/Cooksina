@@ -8,13 +8,23 @@
 import SwiftUI
 
 struct ChatDiscussionView: View {
+    let discussion:ChatList
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack{
+        Text("Hello, \(discussion.name)!")
+            Spacer()
+            Image(systemName: discussion.image)
+            .resizable()
+            .scaledToFit()
+            .frame(width: 100.0)
+            Spacer()
+        }
     }
 }
 
 struct ChatDiscussionView_Previews: PreviewProvider {
     static var previews: some View {
-        ChatDiscussionView()
+        ChatDiscussionView(discussion:ChatList(name: "Tornado", image: "1", messagePreview: "coucou"))
     }
 }
