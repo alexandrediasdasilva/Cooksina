@@ -103,7 +103,16 @@ struct RecetteDetails: View {
                     .padding()
                     
                     if pickerElementSelectionne == "Ingrédients" {
-                        Text("Remplacer par liste des ingrédients dynamique")
+//                        Text("\(recetteChoisie.ingredients)")
+                        
+                        ForEach (recetteChoisie.ingredients) { ingredient in
+                            
+                            HStack {
+                                Text("- ")
+                                Text("\(ingredient.quantite) \(ingredient.unite) \(ingredient.nom)")
+                            }
+                        }
+                        
                     } else if pickerElementSelectionne == "Ustensiles" {
                         Text("Remplacer par liste des ustensiles dynamique")
                     }
@@ -213,6 +222,6 @@ struct InfosAuteur: View {
 struct RecetteDetails_Previews: PreviewProvider {
     
     static var previews: some View {
-        RecetteDetails(recetteChoisie: recettes[11])
+        RecetteDetails(recetteChoisie: recettes[0])
     }
 }

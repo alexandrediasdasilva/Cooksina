@@ -33,7 +33,8 @@ struct Recette: Identifiable {
 struct Ingredient: Identifiable {
     var id = UUID()
     var nom: String
-    var quantite: String // unité variable ?
+    var quantite: String
+    var unite: String
     var suppression: Bool
 }
 

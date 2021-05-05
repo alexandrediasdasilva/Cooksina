@@ -9,6 +9,11 @@ var recettes = [
         nbPersonnes: 4,
         difficulte: .facile,
         temps: 20,
+        ingredients: [
+            Ingredient(nom: "farine", quantite: "1", unite: "kg", suppression: false),
+            Ingredient(nom: "eau", quantite: "1", unite: "L", suppression: false),
+            Ingredient(nom: "citrouilles", quantite: "3", unite: "", suppression: false)
+        ],
         instructions: """
         ÉTAPE 1
         
@@ -48,6 +53,11 @@ var recettes = [
         nbPersonnes: 4,
         difficulte: .facile,
         temps: 135,
+        ingredients: [
+            Ingredient(nom: "bœuf", quantite: "500", unite: "g", suppression: false),
+            Ingredient(nom: "sauce tomate", quantite: "200", unite: "mL", suppression: false),
+            Ingredient(nom: "oignons", quantite: "3", unite: "", suppression: false)
+        ],
         instructions: """
         ÉTAPE 1
         Mélangez les gousses d'ail ecrasées, le vin, le jus de citron, la moitié du curry et le concentré de tomates.
