@@ -121,7 +121,7 @@ var recettes = [
     
     Recette(
         titre: "Butter chicken",
-        description: "Spécialité indienne au poulet assaisonné au graham de Masala",
+        description: "Probablement une de mes recettes coup de cœur ! Le poulet au beurre (ou butter chicken en anglais) est l’un des currys indiens les plus populaires au monde aujourd’hui. C’est un curry assez doux qui ravira tous les palais !",
         image: "butter-chicken",
         auteur: "Jane Doe",
         categories: ["Repas"],
@@ -132,44 +132,36 @@ var recettes = [
         ingredients: [
             Ingredient(nom: "poulet", quantite: "750", unite: "g", suppression: false),
             Ingredient(nom: "ghee", quantite: "150", unite: "g", suppression: false),
-            Ingredient(nom: "oignons", quantite: "2", unite: "", suppression: false),    Ingredient(nom: "cannelle, cumin, massala", quantite: "1", unite: "càc", suppression: false),
-            Ingredient(nom: "yoghourt", quantite: "1", unite: "pot", suppression: false)
+            Ingredient(nom: "oignons", quantite: "2", unite: "", suppression: false),
+            Ingredient(nom: "cannelle, cumin, massala", quantite: "1", unite: "càc", suppression: false),
+            Ingredient(nom: "yaourt", quantite: "1", unite: "pot", suppression: false)
         ],
         instructions: """
         ÉTAPE 1
-        Préparer la marinade : mélanger 1 pot de yoghourt avec les massalas (tandoori et garam), cannelle, clous de girofle et cumin. Saler.
+        Préparer la marinade : mélanger 1 pot de yaourt avec les massalas (tandoori et garam), cannelle, clous de girofle et cumin. Saler.
 
         ÉTAPE 2
         Enduire les morceaux de poulet et laisser mariner au moins 1 heure.
 
         ÉTAPE 3
-        Préchauffer le four au maximum (un four 'tandoor est une vraie fournaise!) et faites-y cuire le poulet pendant 10 mn.
+        Préchauffer le four au maximum (un four tandoor est une vraie fournaise !) et faites-y cuire le poulet pendant 10 mn.
 
         ÉTAPE 4
         Retirer et laisser reposer.
 
         ÉTAPE 5
-        Dans une cocotte, faire fondre le ghee et y faire blondir les oignons, puis ajouter la pâte ail/gingembre et laisser frire quelques
-
-        ÉTAPE 6
-        minutes. Ajouter une cuillerée d'eau de temps à autre pour éviter
-
-        ÉTAPE 7
-        que ça attache.
+        Dans une cocotte, faire fondre le ghee et y faire blondir les oignons, puis ajouter la pâte ail/gingembre et laisser frire quelques minutes. Ajouter une cuillerée d'eau de temps à autre pour éviter que ça attache.
 
         ÉTAPE 8
         Laisser cuire jusqu'à ce que la matière grasse se sépare.
 
         ÉTAPE 9
-        Ajouter la pâte de noix de cajou, lapoudre de piment, la purée de tomate et laisser cuire 10 min à feu doux. Ajouter le second pot de youghourt, la crème fouettée et les morceaux de poulet. Bien mélanger et laisser mijoter
-
-        ÉTAPE 10
-        encore 15 à 20 mn.
+        Ajouter la pâte de noix de cajou, lapoudre de piment, la purée de tomate et laisser cuire 10 min à feu doux. Ajouter le second pot de youghourt, la crème fouettée et les morceaux de poulet. Bien mélanger et laisser mijoter encore 15 à 20 mn.
 
         ÉTAPE 11
-        Dresser sur un plat creux et parsemer de feulles de coriandre hachées.
+        Dresser sur un plat creux et parsemer de feulles de coriandre hachées. Bonne dégustation !
         """,
-        ustensiles: "Poêle, couteau, cuillère, planche à découper, mixeur, pinceau, Cocotte"),
+        ustensiles: "Poêle, couteau, cuillère, planche à découper, mixeur, pinceau, cocotte"),
     
     Recette(
         titre: "Mafé",
