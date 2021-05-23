@@ -197,6 +197,10 @@ struct RecetteDetails: View {
 
 
 struct StatsRecette: View {
+    internal init(myrecetteChoisie: Recette) {
+        self.myrecetteChoisie = myrecetteChoisie
+    }
+    
     
     let myrecetteChoisie: Recette
     
